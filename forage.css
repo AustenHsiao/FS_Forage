@@ -1,0 +1,14 @@
+.navbar .title{
+    color: white;
+}
+
+.navbar a{
+    margin-left: 2vw;
+    margin-right: 2vw;
+    color: lightgray;
+}
+
+.navbar .container-fluid{
+    display: flex;
+    justify-content: flex-start;
+}
