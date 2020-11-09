@@ -1,0 +1,24 @@
+{
+  "name": "fs_forage",
+  "version": "1.0.0",
+  "description": "forage app for FullStack",
+  "main": "server.js",
+  "dependencies": {
+    "node.js": "^0.0.1-security"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AustenHsiao/FS_Forage.git"
+  },
+  "author": "Austen Hsiao, Sandy Wood, Travis McGowan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AustenHsiao/FS_Forage/issues"
+  },
+  "homepage": "https://github.com/AustenHsiao/FS_Forage#readme"
+}
