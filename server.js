@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
         res.write("HI");
     }
     res.end();
-};
+});
 
 server.listen(port, () => {
     console.log(`Server running at on port:${port}`);
