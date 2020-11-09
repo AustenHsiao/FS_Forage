@@ -2,15 +2,12 @@ const http = require('http');
 const fs = require('fs');
 const port = process.env.PORT || 5000;
 
+
+const mainPage = fs.readFileSync('index.html');
+
 const server = http.createServer((req, res) => {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.readFile('index.html', (err, data) => {
-        if(err){
-            return console.log(err);
-        }
-    })
-    
-    res.end();
+    res.end(mainPage);
 });
 
 server.listen(port, () => {
