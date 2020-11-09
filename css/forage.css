@@ -1,3 +1,7 @@
+body {
+  height: 80vw;
+}
+
 nav {
   min-height: 5vw;
 }
@@ -13,6 +17,25 @@ nav {
 }
 
 .navbar .container-fluid {
-  display: flex;
   justify-content: flex-start;
+}
+
+.coord.container {
+  margin-left: 2vw;
+  margin-top: 2vw;
+  width: 30vw;
+  background-color: greenyellow;
+  font-size: 1vw;
+  min-height: 30vw;
+  display: inline-block;
+}
+
+.map.container {
+  margin-left: 2vw;
+  margin-top: 2vw;
+  width: 60%;
+  background-color: greenyellow;
+  font-size: 1vw;
+  min-height: 50vw;
+  display: inline-block;
 }

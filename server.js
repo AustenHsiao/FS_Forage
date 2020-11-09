@@ -2,9 +2,6 @@ const http = require('http');
 const fs = require('fs');
 const port = process.env.PORT || 5000;
 
-
-
-
 const server = http.createServer((req, res) => {
     const mainPage = fs.readFileSync('pages/index.html');
     const cssFile = fs.readFileSync('css/forage.css');
