@@ -1,14 +1,18 @@
-.navbar .title{
-    color: white;
+nav {
+  min-height: 5vw;
 }
 
-.navbar a{
-    margin-left: 2vw;
-    margin-right: 2vw;
-    color: lightgray;
+.navbar .title {
+  color: white;
 }
 
-.navbar .container-fluid{
-    display: flex;
-    justify-content: flex-start;
+.navbar a {
+  margin-left: 2vw;
+  margin-right: 2vw;
+  color: lightgray;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  justify-content: flex-start;
 }
