@@ -3,7 +3,9 @@ nav {
 }
 
 body {
-  background-image: url("../images/mushroom.png");
+  background-size: contain;
+  background-position: center;
+  background-image: url("https://images.pexels.com/photos/3672955/pexels-photo-3672955.jpeg?cs=srgb&dl=pexels-carboxaldehyde-3672955.jpg&fm=jpg");
 }
 
 .navbar .title {
