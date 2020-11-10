@@ -3,9 +3,11 @@ nav {
 }
 
 body {
-  background-size: contain;
+  background-image: url("https://images.pexels.com/photos/3672955/pexels-photo-3672955.jpeg?cs=srgb&dl=pexels-carboxaldehyde-3672955.jpg&fm=jpg"),
+    url("https://i.imgur.com/vRXGky8.png");
+  background-size: cover;
   background-position: center;
-  background-image: url("https://images.pexels.com/photos/3672955/pexels-photo-3672955.jpeg?cs=srgb&dl=pexels-carboxaldehyde-3672955.jpg&fm=jpg");
+  background-repeat: no-repeat, repeat;
 }
 
 .navbar .title {
