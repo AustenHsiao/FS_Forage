@@ -1,5 +1,6 @@
 nav {
   min-height: 5vw;
+  height: 5vw;
 }
 
 body {
@@ -12,16 +13,24 @@ body {
 
 .navbar .title {
   color: white;
+  font-size: 2vw;
 }
 
 .navbar a {
-  margin-left: 2vw;
-  margin-right: 2vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  padding-top: 1.5vw;
   color: lightgray;
+  height: 100%;
+  font-weight: bold;
 }
 
-.navbar .container-fluid {
-  justify-content: flex-start;
+.navbar a:hover{
+  text-decoration: none;
+  color: black;
+  background-color: white;
 }
 
 .coord.container {
