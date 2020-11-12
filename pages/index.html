@@ -7,6 +7,9 @@
         <title>Foraging App</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/forage.css" />
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-dark">
@@ -17,18 +20,55 @@
         </nav> 
         <div class="container whole">
             <div class="container coord"> 
-                <div id="coordinates">coordinates</div>
+                <div id="coordinatesBox">coordinates</div>
             </div>
 
             <div class="container map"> 
-                <div id="map">map</div>
+                <div id="mapBox">map</div>
             </div>
 
         </div>
 
         <div class="container weather"> 
-            <div id="weather">weather</div>
+            <div id="weatherBox">weather</div>
         </div>
+
+        <button id="testButton">HERE I AM</button>
+
+        <script type="text/babel">
+            const cityName = 'Portland';
+            const stateCode = 'Oregon';
+            const getWeather = async () => { 
+                const api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${stateCode}&appid=6e093cb352d4d124394962457cd432bc`);
+                if(api.status === 404){
+                    console.log("Data not found");
+                    return null;
+                }
+
+                const data = await api.json();
+                console.log(data)
+                return data;
+            }
+            
+            document.getElementById("testButton").addEventListener("click", () =>{
+                const weather = getWeather();
+                if(!weather){
+                    ReactDOM.render(
+                        React.createElement('h1', null, "No data found for location"),
+                        document.getElementById('weatherBox')
+                    );
+                }else{
+                    ReactDOM.render(
+                        React.createElement('h1', null, `Weather for ${cityName},${stateCode}`),
+                        document.getElementById('weatherBox')
+                    );
+                }
+                
+            });
+
+            
+
+        </script>
     </body>
     
 </html>
