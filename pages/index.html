@@ -36,6 +36,8 @@
         </div>
 
         <button id="testButton">HERE I AM</button> <!-- tests the weather api. sends to console and is hardcoded for ptown, currently-->
+        <br>
+        <button id="markerTest">Marker Test</button> <!-- for testing creation of markers-->
         <script type="text/babel" >
             let locations = [];
             const initMap = () => {
@@ -106,6 +108,10 @@
                         document.getElementById('weatherBox')
                     );
                 }
+            });
+
+            document.getElementById("markerTest").addEventListener("click", () =>{
+                console.log("Marker Test button clicked");
             });
         </script>
     </body>
