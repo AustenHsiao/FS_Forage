@@ -37,6 +37,7 @@
 
         <button id="testButton">HERE I AM</button> <!-- tests the weather api. sends to console and is hardcoded for ptown, currently-->
         <script type="text/babel" >
+            let locations = [];
             const initMap = () => {
                 let coord = document.getElementById("coordinatesBox");
                 coord.innerHTML = "";
@@ -53,7 +54,9 @@
                         draggable: true,
                         title: "new foraging spot"
                     });
-                    coord.innerHTML += `${forageSpot.position.lat()}, ${forageSpot.position.lng()}<br>`
+                    let latlng = `${forageSpot.position.lat()}, ${forageSpot.position.lng()}`;
+                    coord.innerHTML += `${locations.length+1}: ${latlng} <br>`
+                    locations.push(latlng);
                 });
 
 
