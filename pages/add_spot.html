@@ -16,7 +16,7 @@
     <body>
         <nav class="navbar navbar-expand-lg bg-dark">
                 <h3 class="navbar-brand title">ForageApp</h3>
-                <a href="#">Main</a>
+                <a href="/pages/index.html">Main</a>
                 <a href="/pages/add_spot.html">Add Spot</a>
                 <a href="#">Page 3</a>
         </nav> 
@@ -35,8 +35,7 @@
             <div id="weatherBox">weather</div>
         </div>
 
-        <button id="testButton">HERE I AM</button> <!-- tests the weather api. sends to console and is hardcoded for ptown, currently-->
-
+        <button id="markerTest">Marker Test</button> <!-- for testing creation of markers-->
         <script type="text/babel" >
             let locations = [];
             const initMap = () => {
@@ -94,22 +93,9 @@
                 return data;
             }
 
-            document.getElementById("testButton").addEventListener("click", () =>{
-                const weather = getWeather();
-                if(!weather){
-                    ReactDOM.render(
-                        React.createElement('h1', null, "No data found for location"),
-                        document.getElementById('weatherBox')
-                    );
-                }else{
-                    ReactDOM.render(
-                        React.createElement('h1', null, `Weather for ${cityName},${stateCode}`),
-                        document.getElementById('weatherBox')
-                    );
-                }
+            document.getElementById("markerTest").addEventListener("click", () =>{
+                console.log("Marker Test button clicked");
             });
-
-
         </script>
     </body>
     
