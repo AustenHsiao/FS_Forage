@@ -27,7 +27,7 @@ body {
   font-weight: bold;
 }
 
-.navbar a:hover{
+.navbar a:hover {
   text-decoration: none;
   color: black;
   background-color: white;
@@ -78,4 +78,8 @@ body {
   min-width: 100%;
   margin-top: 1vw;
   justify-content: center;
+}
+
+#mapBox {
+  height: 100%;
 }
