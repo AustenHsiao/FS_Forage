@@ -22,7 +22,8 @@
         </nav> 
         <div class="container whole">
             <div class="container coord"> 
-                <div id="coordinatesBox">coordinates</div>
+                <h3 id="coordTitle">Pinned Foraging Locations</h3>
+                <div id="coordinatesBox"></div>
             </div>
 
             <div class="container map"> 
@@ -34,32 +35,34 @@
             <div id="weatherBox">weather</div>
         </div>
 
-        <button id="testButton">HERE I AM</button>
+        <button id="testButton">HERE I AM</button> <!-- tests the weather api. sends to console and is hardcoded for ptown, currently-->
         <script type="text/babel" >
             const initMap = () => {
-
-
+                let coord = document.getElementById("coordinatesBox");
+                coord.innerHTML = "";
                 
                  const map = new google.maps.Map(document.getElementById("mapBox"), {
                     zoom: 13,
                     center: { lat: 45.5111, lng: -122.6834 }, //portland state university
                 });
 
-                google.maps.event.addListener(map, 'click', function(event) {
-                    new google.maps.Marker({
-                        position: event.latLng, 
+                google.maps.event.addListener(map, 'click', function(spot) {
+                    const forageSpot = new google.maps.Marker({
+                        position: spot.latLng, 
                         map: map,
                         draggable: true,
                         title: "new foraging spot"
                     });
+                    coord.innerHTML += `${forageSpot.position.lat()}, ${forageSpot.position.lng()}<br>`
                 });
+
+
             };
 
-            
-            
-            
-            
 
+
+
+            //HARDCODED 11/15+++++++++++++++WIP++++++++++++++++++
             const cityName = 'Portland';
             const stateCode = 'Oregon';
 

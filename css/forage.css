@@ -37,14 +37,14 @@ body {
   max-width: 32.5vw;
   min-width: 32.5vw;
   background-color: rgba(0, 255, 0, 0.4);
-  font-size: 1vw;
   min-height: 30vw;
+  max-height: 30vw;
   display: inline-block;
   margin: 0;
   padding: 1vw;
   color: white;
   font-size: 2vw;
-  font-weight: bold;
+  overflow: auto;
 }
 
 .map.container {
@@ -82,4 +82,15 @@ body {
 
 #mapBox {
   height: 100%;
+}
+
+#coordinatesBox {
+  overflow: auto;
+  font-size: 1vw;
+}
+
+#coordTitle {
+  font-size: 1.5vw;
+  text-decoration: underline;
+  font-weight: bold;
 }
