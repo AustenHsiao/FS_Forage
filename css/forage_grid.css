@@ -1,0 +1,164 @@
+body {
+  background-image: url("https://images.pexels.com/photos/3672955/pexels-photo-3672955.jpeg?cs=srgb&dl=pexels-carboxaldehyde-3672955.jpg&fm=jpg"),
+    url("https://i.imgur.com/vRXGky8.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat, repeat;
+}
+
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container {
+  margin: 1fr;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  gap: 2px 2px;
+}
+
+/* For presentation only, no need to copy the code below */
+/*
+.grid-container * {
+  border: 1px solid red;
+}
+*/
+
+#tborder {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+
+#lborder {
+  grid-column: 1/2;
+  grid-row: 2/-1;
+}
+
+#rborder {
+  grid-column: 20/-1;
+  grid-row: 2/-1;
+}
+
+#bborder {
+  grid-column: 2/20;
+  grid-row: 20/-1;
+}
+
+#navbar {
+  grid-column: 2/20;
+  grid-row: 2/3;
+  border-style: solid;
+  border-width: 2px;
+  border-color:white;
+}
+
+.hlink {
+  color: white;
+}
+
+.hlink:hover {
+  background-color: rgba(255,255,255,0.5);  
+}
+
+#nav1 {
+  grid-column: 2/8;
+  grid-row:2/3;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+}
+
+#nav2 {
+  grid-column: 8/14;
+  grid-row:2/3;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: rgba(255,255,255,0.5);
+  z-index: 1;
+  text-decoration: underline;
+}
+
+#nav3 {
+  grid-column: 14/20;
+  grid-row:2/3;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+}
+
+#title {
+  grid-column: 2/20;
+  grid-row: 3/5;
+  text-align: center;
+  justify-content: center;
+  font-size: xx-large;
+  background-color: rgba(255,255,255,0.5);  
+}
+
+#detail {
+  grid-column: 2/11;
+  grid-row: 5/20;
+  justify-content: space-around;
+  color: black;
+  background-color: rgba(255,255,255,0.5);  
+}
+
+#namelabel {
+  grid-column: 2/5;
+  grid-row: 5/6;
+}
+
+#nameinput {
+  grid-column: 5/11;
+  grid-row: 5/6;
+}
+
+#specieslabel {
+  grid-column: 2/5;
+  grid-row: 6/7;
+}
+
+#speciesinput {
+  grid-column: 5/11;
+  grid-row: 6/7;
+}
+
+#detailslabel {
+  grid-column: 2/11;
+  grid-row: 7/8;
+}
+
+#detailsinput {
+  grid-column: 2/11;
+  grid-row: 8/19;
+  align-content: flex-start;
+}
+
+#submit {
+  grid-column: 2/11;
+  grid-row: 19/20;
+}
+
+#mapdiv {
+  grid-column:11/20;
+  grid-row: 5/20;
+  border-style: solid;
+  border-width: 1px;
+  border-color:white;
+}
+
+#mapdiscl {
+  grid-column: 11/20;
+  grid-row: 5/6;
+  z-index: 1;
+  background-color: rgba(255,255,255,0.5);  
+}
+
+#mapBox {
+  grid-column:11/20;
+  grid-row: 6/20;
+  z-index: 1;
+}
+

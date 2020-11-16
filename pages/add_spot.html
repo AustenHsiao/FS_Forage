@@ -3,10 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="authors" content="Austen Hsiao, Sandy Wood, Travis McGowan">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0" />   -->
         <title>Foraging App</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/forage.css" />
+        
+        <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+      />
+
+        <link rel="stylesheet" type="text/css" href="../css/forage_grid.css" />
         <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
         <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -14,28 +20,30 @@
     
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-dark">
-                <h3 class="navbar-brand title">ForageApp</h3>
-                <a href="/pages/index.html">Main</a>
-                <a href="/pages/add_spot.html">Add Spot</a>
-                <a href="#">Page 3</a>
-        </nav> 
-        <div class="container whole">
-            <div class="container coord"> 
-                <h3 id="coordTitle">Pinned Foraging Locations</h3>
-                <div id="coordinatesBox"></div>
-            </div>
 
-            <div class="container map"> 
-                <div id="mapBox" crossorigin="anonymous">map</div>
-            </div>
+        <div class="grid-container">
+          <div  name="tborder" id = "tborder"></div>
+          <div  name="lborder" id = "lborder"></div>
+          <div  name="rborder" id = "rborder"></div>
+          <div  name="bborder" id = "bborder"></div>
+          <div class="navbar" name="navbar" id="navbar"></div>
+          <a class="nav1 hlink" href="/pages/index.html" name="nav1" id="nav1">Main</a>
+          <a class = "nav2 hlink" href="/pages/add_spot.html" name="nav2" id ="nav2">Add Spot</a>
+          <a class = "nav3 hlink" href="#" name="nav3" id="nav3">About (todo)</a>
+          <div class="title" name="title" id="title">NEW SPOT ENTRY FORM</div>
+          <div class="detail" name="detail" id="detail"></div>
+          <label for="nameinput" name="namelabel" id="namelabel">Spot Name:</label>
+          <input type="text" name = "nameinput" id="nameinput" required/>
+          <label for="speciesinput" name="specieslabel" id="specieslabel">Species Found:</label>
+          <input type="text" name="speciesinput" id="speciesinput" required/>
+          <label for="spotdetails" name="detailslabel" id = "detailslabel">Spot Details:(ingress/parking/conditions)</label>
+          <input type="text" name ="detailsinput" id="detailsinput" />
+          <button id="submit">Create New Spot</button> 
+          <div class="container map" name="mapdiv" id="mapdiv"></div>
+          <div name="mapdiscl" id="mapdiscl">Select new spot location:</div>
+          <div id="mapBox" crossorigin="anonymous">map</div>
         </div>
 
-        <div class="container weather"> 
-            <div id="weatherBox">weather</div>
-        </div>
-
-        <button id="markerTest">Marker Test</button> <!-- for testing creation of markers-->
         <script type="text/babel" >
             let locations = [];
             const initMap = () => {
@@ -58,28 +66,11 @@
                     coord.innerHTML += `${locations.length+1}: ${latlng} <br>`
                     locations.push(latlng);
                 });
-
-
             };
-
-
-
 
             //HARDCODED 11/15+++++++++++++++WIP++++++++++++++++++
             const cityName = 'Portland';
             const stateCode = 'Oregon';
-
-            const getWeather = async () => { 
-                const api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${stateCode}&appid=6e093cb352d4d124394962457cd432bc`);
-                if(api.status === 404){
-                    console.log("Data not found");
-                    return null;
-                }
-
-                const data = await api.json();
-                console.log(data)
-                return data;
-            }
 
             const getMap = async () => { 
                 const api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${stateCode}&appid=6e093cb352d4d124394962457cd432bc`);
@@ -93,8 +84,8 @@
                 return data;
             }
 
-            document.getElementById("markerTest").addEventListener("click", () =>{
-                console.log("Marker Test button clicked");
+            document.getElementById("submit").addEventListener("click", () =>{
+                console.log("Submit button clicked");
             });
         </script>
     </body>
