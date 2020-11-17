@@ -16,13 +16,6 @@ html, body, .grid-container { height: 100%; margin: 0; }
   gap: 2px 2px;
 }
 
-/* For presentation only, no need to copy the code below */
-/*
-.grid-container * {
-  border: 1px solid red;
-}
-*/
-
 #tborder {
   grid-column: 1/-1;
   grid-row: 1/2;

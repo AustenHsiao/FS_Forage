@@ -1,0 +1,137 @@
+body {
+  background-image: url("https://images.pexels.com/photos/3672955/pexels-photo-3672955.jpeg?cs=srgb&dl=pexels-carboxaldehyde-3672955.jpg&fm=jpg"),
+    url("https://i.imgur.com/vRXGky8.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat, repeat;
+}
+
+html, body, .grid-container { height: 100%; margin: 0; }
+
+.grid-container {
+  margin: 1fr;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 2px 2px;
+}
+
+#tborder {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+
+#lborder {
+  grid-column: 1/1;
+  grid-row: 2/-1;
+}
+
+#rborder {
+  grid-column: 8/-1;
+  grid-row: 2/-1;
+}
+
+#bborder {
+  grid-column: 2/9;
+  grid-row: 12/-1;
+}
+
+#title {
+  grid-column: 2/8;
+  grid-row: 2/3;
+  text-align: center;
+  justify-content: center;
+  font-size: xx-large;
+  background-color: rgba(255,255,255,0.5);  
+}
+
+#detail {
+  grid-column: 2/8;
+  grid-row: 3/10;
+  justify-content: space-around;
+  color: black;
+  background-color: rgba(255,255,255,0.5);  
+}
+
+#namelabel {
+  grid-column: 2/4;
+  grid-row: 3/4;
+}
+
+#nameinput {
+  grid-column: 4/8;
+  grid-row: 3/4;
+}
+
+#specieslabel {
+  grid-column: 2/4;
+  grid-row: 4/5;
+}
+
+#speciesinput {
+  grid-column: 4/8;
+  grid-row: 4/5;
+}
+
+#detailslabel {
+  grid-column: 2/8;
+  grid-row: 5/6;
+}
+
+#detailsinput {
+  grid-column: 2/8;
+  grid-row: 6/10;
+  align-content: flex-start;
+}
+
+#next {
+  grid-column: 2/8;
+  grid-row: 10/11;
+  z-index: 1;
+}
+
+#submit {
+  grid-column: 2/8;
+  grid-row: 10/11;
+  z-index: 2;
+}
+
+#cancel {
+  grid-column: 2/8;
+  grid-row: 11/12;
+}
+
+#ziplabel {
+  grid-column: 2/4;
+  grid-row: 3/4;
+  background-color: rgba(255,255,255,0.5);  
+}
+
+#zipinput {
+  grid-column: 4/8;
+  grid-row: 3/4;
+  z-index: 2;
+}
+
+#mapdiv {
+  grid-column: 2/8;
+  grid-row: 3/10;
+  border-style: solid;
+  border-width: 1px;
+  border-color:white;
+  z-index: 2;
+}
+
+#mapdiscl {
+  grid-column: 2/8;
+  grid-row: 4/5;
+  z-index: 2;
+  background-color: rgba(255,255,255,0.5);  
+}
+
+#mapBox {
+  grid-column:2/8;
+  grid-row: 5/10;
+  background-color: rgba(255,255,255,0.5);  
+  z-index: 2;
+}

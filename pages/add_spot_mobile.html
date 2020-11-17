@@ -12,7 +12,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
       />
 
-        <link rel="stylesheet" type="text/css" href="../css/add_spot_full.css" />
+        <link rel="stylesheet" type="text/css" href="../css/add_spot_mobile.css" />
         <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
         <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -26,10 +26,6 @@
           <div  name="lborder" id = "lborder"></div>
           <div  name="rborder" id = "rborder"></div>
           <div  name="bborder" id = "bborder"></div>
-          <div class="navbar" name="navbar" id="navbar"></div>
-          <a class="nav1 hlink" href="/pages/index.html" name="nav1" id="nav1">Main</a>
-          <a class = "nav2 hlink" href="/pages/add_spot.html" name="nav2" id ="nav2">Add Spot</a>
-          <a class = "nav3 hlink" href="#" name="nav3" id="nav3">About (todo)</a>
           <div class="title" name="title" id="title">NEW SPOT ENTRY FORM</div>
           <div class="detail" name="detail" id="detail"></div>
           <label for="nameinput" name="namelabel" id="namelabel">Spot Name:</label>
@@ -38,10 +34,14 @@
           <input type="text" name="speciesinput" id="speciesinput" required/>
           <label for="spotdetails" name="detailslabel" id = "detailslabel">Spot Details:(ingress/parking/conditions)</label>
           <input type="text" name ="detailsinput" id="detailsinput" />
-          <button name ="submit" id="submit">Create New Spot</button> 
-          <div class="container map" name="mapdiv" id="mapdiv"></div>
-          <div name="mapdiscl" id="mapdiscl">Select new spot location:</div>
-          <div id="mapBox" crossorigin="anonymous">map</div>
+          <button name ="next" id="next">Next</button> 
+          <button name ="cancel" id="cancel">Cancel Submission</button>
+          <label style="visibility: hidden;" for="zipinput" name="ziplabel" id = "ziplabel">Drop pin at Zip:</label>
+          <input style="visibility: hidden;" type="text" name ="zipinput" id="zipinput" /> 
+          <div style="visibility: hidden;" class="container map" name="mapdiv" id="mapdiv"></div>
+          <div style="visibility: hidden;" name="mapdiscl" id="mapdiscl">Select new spot location:</div>
+          <div style="visibility: hidden;" name = "mapBox" id="mapBox" crossorigin="anonymous">map</div>
+          <button style="visibility: hidden;" name ="submit" id="submit">Submit</button> 
         </div>
 
         <script type="text/babel" >
@@ -84,10 +84,31 @@
                 return data;
             }
 
-            document.getElementById("submit").addEventListener("click", () =>{
-                console.log("Submit button clicked");
+            document.getElementById("next").addEventListener("click", () =>{
+
+                console.log("Next button clicked");
+
+                /*ADD CODE HERE TO VALIDATE THE INFO ENTERED BY THE USER*/
+                document.getElementById("ziplabel").style.visibility="visible";
+                document.getElementById("zipinput").style.visibility="visible";
+                document.getElementById("mapdiv").style.visibility="visible";
+                document.getElementById("mapdiscl").style.visibility="visible";
+                document.getElementById("mapBox").style.visibility="visible";
+                document.getElementById("submit").style.visibility="visible";
+
+                document.getElementById("detail").style.display="none";
+                document.getElementById("namelabel").style.display="none";
+                document.getElementById("nameinput").style.display="none";
+                document.getElementById("specieslabel").style.display="none";
+                document.getElementById("speciesinput").style.visibility="hidden";
+                document.getElementById("detailslabel").style.visibility="hidden";
+                document.getElementById("detailsinput").style.visibility="hidden";
+                document.getElementById("next").style.visibility="hidden";
+
+
             });
         </script>
+
     </body>
     
 </html>
