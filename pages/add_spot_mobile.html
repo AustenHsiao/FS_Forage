@@ -12,7 +12,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
       />
 
-        <link rel="stylesheet" type="text/css" href="../css/add_spot_mobile.css" />
+        <link rel="stylesheet" href="/add_spot_mobile.css" />
         <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
         <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -39,7 +39,7 @@
           <label style="visibility: hidden;" for="zipinput" name="ziplabel" id = "ziplabel">Drop pin at Zip:</label>
           <input style="visibility: hidden;" type="text" name ="zipinput" id="zipinput" /> 
           <div style="visibility: hidden;" class="container map" name="mapdiv" id="mapdiv"></div>
-          <div style="visibility: hidden;" name="mapdiscl" id="mapdiscl">Select new spot location:</div>
+          <div style="visibility: hidden;" name="mapdiscl" id="mapdiscl">Move pin to Secret Spot</div>
           <div style="visibility: hidden;" name = "mapBox" id="mapBox" crossorigin="anonymous">map</div>
           <button style="visibility: hidden;" name ="submit" id="submit">Submit</button> 
         </div>
@@ -86,25 +86,30 @@
 
             document.getElementById("next").addEventListener("click", () =>{
 
-                console.log("Next button clicked");
-
                 /*ADD CODE HERE TO VALIDATE THE INFO ENTERED BY THE USER*/
                 document.getElementById("ziplabel").style.visibility="visible";
+                document.getElementById("ziplabel").style.zIndex="1";
                 document.getElementById("zipinput").style.visibility="visible";
+                document.getElementById("zipinput").style.zIndex="1";
                 document.getElementById("mapdiv").style.visibility="visible";
+                document.getElementById("mapdiv").style.zIndex="2";
                 document.getElementById("mapdiscl").style.visibility="visible";
+                document.getElementById("mapdiscl").style.zIndex="2";
                 document.getElementById("mapBox").style.visibility="visible";
+                document.getElementById("mapBox").style.zIndex="2";
                 document.getElementById("submit").style.visibility="visible";
+                document.getElementById("submit").style.zIndex="2";
 
                 document.getElementById("detail").style.display="none";
                 document.getElementById("namelabel").style.display="none";
                 document.getElementById("nameinput").style.display="none";
                 document.getElementById("specieslabel").style.display="none";
-                document.getElementById("speciesinput").style.visibility="hidden";
-                document.getElementById("detailslabel").style.visibility="hidden";
-                document.getElementById("detailsinput").style.visibility="hidden";
-                document.getElementById("next").style.visibility="hidden";
+                document.getElementById("speciesinput").style.display="none";
+                document.getElementById("detailslabel").style.display="none";
+                document.getElementById("detailsinput").style.display="none";
+                document.getElementById("next").style.display="none";
 
+                document.getElementById("zipinput").focus();
 
             });
         </script>

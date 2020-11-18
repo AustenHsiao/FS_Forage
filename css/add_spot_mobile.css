@@ -40,9 +40,10 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-column: 2/8;
   grid-row: 2/3;
   text-align: center;
-  justify-content: center;
-  font-size: xx-large;
+  font-size: 350%;
   background-color: rgba(255,255,255,0.5);  
+  font-weight: 500;
+  color: black;
 }
 
 #detail {
@@ -56,61 +57,82 @@ html, body, .grid-container { height: 100%; margin: 0; }
 #namelabel {
   grid-column: 2/4;
   grid-row: 3/4;
+  font-size: xx-large;
+  text-align: right;
+  font-weight: 500;
+  max-width: 100%;
 }
 
 #nameinput {
   grid-column: 4/8;
   grid-row: 3/4;
+  font-size: 25px;
 }
 
 #specieslabel {
   grid-column: 2/4;
   grid-row: 4/5;
+  font-size: xx-large;
+  text-align: right;
+  vertical-align: text-bottom;
+  font-weight: 500;
+  max-width: 100%;
 }
 
 #speciesinput {
   grid-column: 4/8;
   grid-row: 4/5;
+  font-size: 25px;
 }
 
 #detailslabel {
   grid-column: 2/8;
   grid-row: 5/6;
+  font-size: xx-large;
+  text-align: center;
+  font-weight: 500;
+  max-width: 100%;
 }
 
 #detailsinput {
   grid-column: 2/8;
   grid-row: 6/10;
-  align-content: flex-start;
+  font-size: 25px;
 }
 
 #next {
   grid-column: 2/8;
   grid-row: 10/11;
+  font-size: 200%;
   z-index: 1;
 }
 
 #submit {
   grid-column: 2/8;
   grid-row: 10/11;
+  font-size: 200%;
   z-index: 2;
 }
 
 #cancel {
   grid-column: 2/8;
   grid-row: 11/12;
+  font-size: 200%;
 }
 
 #ziplabel {
   grid-column: 2/4;
   grid-row: 3/4;
+  font-size: xx-large;
   background-color: rgba(255,255,255,0.5);  
+  font-weight: 500;
 }
 
 #zipinput {
   grid-column: 4/8;
   grid-row: 3/4;
   z-index: 2;
+  font-size: 25px;
 }
 
 #mapdiv {
@@ -127,6 +149,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-row: 4/5;
   z-index: 2;
   background-color: rgba(255,255,255,0.5);  
+  font-size: xx-large;
 }
 
 #mapBox {
