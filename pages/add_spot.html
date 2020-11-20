@@ -28,7 +28,7 @@
           <div  name="rborder" id = "rborder"></div>
           <div  name="bborder" id = "bborder"></div>
           <div class="navbar" name="navbar" id="navbar"></div>
-          <a class="nav1 hlink" href="/pages/index.html" name="nav1" id="nav1">Main</a>
+          <a class="nav1 hlink" href="/" name="nav1" id="nav1">Main</a>
           <a class = "nav2 hlink" href="/pages/add_spot.html" name="nav2" id ="nav2">Add Spot</a>
           <a class = "nav3 hlink" href="#" name="nav3" id="nav3">About (todo)</a>
           <div class="title" name="title" id="title">NEW SPOT ENTRY FORM</div>
@@ -45,50 +45,8 @@
           <div id="mapBox" crossorigin="anonymous">map</div>
         </div>
 
-        <script type="text/babel" >
-            let locations = [];
-            const initMap = () => {
-                let coord = document.getElementById("coordinatesBox");
-                coord.innerHTML = "";
-                
-                 const map = new google.maps.Map(document.getElementById("mapBox"), {
-                    zoom: 13,
-                    center: { lat: 45.5111, lng: -122.6834 }, //portland state university
-                });
-
-                google.maps.event.addListener(map, 'click', function(spot) {
-                    const forageSpot = new google.maps.Marker({
-                        position: spot.latLng, 
-                        map: map,
-                        draggable: true,
-                        title: "new foraging spot"
-                    });
-                    let latlng = `${forageSpot.position.lat()}, ${forageSpot.position.lng()}`;
-                    coord.innerHTML += `${locations.length+1}: ${latlng} <br>`
-                    locations.push(latlng);
-                });
-            };
-
-            //HARDCODED 11/15+++++++++++++++WIP++++++++++++++++++
-            const cityName = 'Portland';
-            const stateCode = 'Oregon';
-
-            const getMap = async () => { 
-                const api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${stateCode}&appid=6e093cb352d4d124394962457cd432bc`);
-                if(api.status === 404){
-                    console.log("Data not found");
-                    return null;
-                }
-
-                const data = await api.json();
-                console.log(data)
-                return data;
-            }
-
-            document.getElementById("submit").addEventListener("click", () =>{
-                console.log("Submit button clicked");
-            });
-        </script>
+        <script src="map.js"></script>
+        <script type="text/babel" src="weather.js"></script>
     </body>
     
 </html>

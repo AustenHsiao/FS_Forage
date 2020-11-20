@@ -11,12 +11,22 @@
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
         <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
         <script async="false" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1polXZ_aJhq0AMs9o27vqrNtva1pCLQ&callback=initMap"></script>
-    
+        <script src="index.js"></script>
     </head>
     <body>
+        <div class="welcome" id="welcomeOverlay">
+            <div class="container welcome-text">
+                <h3 id="desc-title">Welcome to Forage App</h3>
+                <p id="desc">Forage app allows users to easily set and store foraging locations. Start by clicking on the Google Map, then filling in the details
+                    on the corresponding page. Your information will be displayed on the main page. Use the weather data to plan ahead!</p>
+                <button id="escape" onclick="clearOverlay()">Continue</button>
+            </div>
+        </div>
+
+
         <nav class="navbar navbar-expand-lg bg-dark">
                 <h3 class="navbar-brand title">ForageApp</h3>
-                <a href="#">Main</a>
+                <a href="/">Map</a>
                 <a href="/add_spot.html">Add Spot</a>
                 <a href="#">Page 3</a>
         </nav> 
@@ -37,80 +47,8 @@
 
         <button id="testButton">HERE I AM</button> <!-- tests the weather api. sends to console and is hardcoded for ptown, currently-->
 
-        <script type="text/babel" >
-            let locations = [];
-            const initMap = () => {
-                let coord = document.getElementById("coordinatesBox");
-                coord.innerHTML = "";
-                
-                 const map = new google.maps.Map(document.getElementById("mapBox"), {
-                    zoom: 13,
-                    center: { lat: 45.5111, lng: -122.6834 }, //portland state university
-                });
-
-                google.maps.event.addListener(map, 'click', function(spot) {
-                    const forageSpot = new google.maps.Marker({
-                        position: spot.latLng, 
-                        map: map,
-                        draggable: true,
-                        title: "new foraging spot"
-                    });
-                    let latlng = `${forageSpot.position.lat()}, ${forageSpot.position.lng()}`;
-                    coord.innerHTML += `${locations.length+1}: ${latlng} <br>`
-                    locations.push(latlng);
-                });
-
-
-            };
-
-
-
-
-            //HARDCODED 11/15+++++++++++++++WIP++++++++++++++++++
-            const cityName = 'Portland';
-            const stateCode = 'Oregon';
-
-            const getWeather = async () => { 
-                const api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${stateCode}&appid=6e093cb352d4d124394962457cd432bc`);
-                if(api.status === 404){
-                    console.log("Data not found");
-                    return null;
-                }
-
-                const data = await api.json();
-                console.log(data)
-                return data;
-            }
-
-            const getMap = async () => { 
-                const api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${stateCode}&appid=6e093cb352d4d124394962457cd432bc`);
-                if(api.status === 404){
-                    console.log("Data not found");
-                    return null;
-                }
-
-                const data = await api.json();
-                console.log(data)
-                return data;
-            }
-
-            document.getElementById("testButton").addEventListener("click", () =>{
-                const weather = getWeather();
-                if(!weather){
-                    ReactDOM.render(
-                        React.createElement('h1', null, "No data found for location"),
-                        document.getElementById('weatherBox')
-                    );
-                }else{
-                    ReactDOM.render(
-                        React.createElement('h1', null, `Weather for ${cityName},${stateCode}`),
-                        document.getElementById('weatherBox')
-                    );
-                }
-            });
-
-
-        </script>
+        <script src="map.js"></script>
+        <script type="text/babel" src="weather.js"></script>
     </body>
     
 </html>

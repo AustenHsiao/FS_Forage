@@ -44,75 +44,8 @@
           <button style="visibility: hidden;" name ="submit" id="submit">Submit</button> 
         </div>
 
-        <script type="text/babel" >
-            let locations = [];
-            const initMap = () => {
-                let coord = document.getElementById("coordinatesBox");
-                coord.innerHTML = "";
-                
-                 const map = new google.maps.Map(document.getElementById("mapBox"), {
-                    zoom: 13,
-                    center: { lat: 45.5111, lng: -122.6834 }, //portland state university
-                });
-
-                google.maps.event.addListener(map, 'click', function(spot) {
-                    const forageSpot = new google.maps.Marker({
-                        position: spot.latLng, 
-                        map: map,
-                        draggable: true,
-                        title: "new foraging spot"
-                    });
-                    let latlng = `${forageSpot.position.lat()}, ${forageSpot.position.lng()}`;
-                    coord.innerHTML += `${locations.length+1}: ${latlng} <br>`
-                    locations.push(latlng);
-                });
-            };
-
-            //HARDCODED 11/15+++++++++++++++WIP++++++++++++++++++
-            const cityName = 'Portland';
-            const stateCode = 'Oregon';
-
-            const getMap = async () => { 
-                const api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},${stateCode}&appid=6e093cb352d4d124394962457cd432bc`);
-                if(api.status === 404){
-                    console.log("Data not found");
-                    return null;
-                }
-
-                const data = await api.json();
-                console.log(data)
-                return data;
-            }
-
-            document.getElementById("next").addEventListener("click", () =>{
-
-                /*ADD CODE HERE TO VALIDATE THE INFO ENTERED BY THE USER*/
-                document.getElementById("ziplabel").style.visibility="visible";
-                document.getElementById("ziplabel").style.zIndex="1";
-                document.getElementById("zipinput").style.visibility="visible";
-                document.getElementById("zipinput").style.zIndex="1";
-                document.getElementById("mapdiv").style.visibility="visible";
-                document.getElementById("mapdiv").style.zIndex="2";
-                document.getElementById("mapdiscl").style.visibility="visible";
-                document.getElementById("mapdiscl").style.zIndex="2";
-                document.getElementById("mapBox").style.visibility="visible";
-                document.getElementById("mapBox").style.zIndex="2";
-                document.getElementById("submit").style.visibility="visible";
-                document.getElementById("submit").style.zIndex="2";
-
-                document.getElementById("detail").style.display="none";
-                document.getElementById("namelabel").style.display="none";
-                document.getElementById("nameinput").style.display="none";
-                document.getElementById("specieslabel").style.display="none";
-                document.getElementById("speciesinput").style.display="none";
-                document.getElementById("detailslabel").style.display="none";
-                document.getElementById("detailsinput").style.display="none";
-                document.getElementById("next").style.display="none";
-
-                document.getElementById("zipinput").focus();
-
-            });
-        </script>
+        <script src="map.js"></script>
+        <script type="text/babel" src="weather.js"></script>
 
     </body>
     

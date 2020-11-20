@@ -94,3 +94,20 @@ body {
   text-decoration: underline;
   font-weight: bold;
 }
+
+.welcome {
+  z-index: 3;
+  position: fixed;
+  padding-top: 15vw;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+#escape {
+  border-style: none;
+  background-color: beige;
+  margin-left: 50%;
+  margin-right: 50%;
+}
