@@ -5,22 +5,14 @@
         <meta name="authors" content="Austen Hsiao, Sandy Wood, Travis McGowan">
 <!--        <meta name="viewport" content="width=device-width, initial-scale=1.0" />   -->
         <title>Foraging App</title>
-        
-        <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
-      />
-
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="/add_spot_mobile.css" />
-        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script> 
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>  
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> 
         <script async="false" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1polXZ_aJhq0AMs9o27vqrNtva1pCLQ&callback=initMap"></script>
-    
     </head>
     <body>
-
         <div class="grid-container">
           <div  name="tborder" id = "tborder"></div>
           <div  name="lborder" id = "lborder"></div>
@@ -43,10 +35,7 @@
           <div style="visibility: hidden;" name = "mapBox" id="mapBox" crossorigin="anonymous">map</div>
           <button style="visibility: hidden;" name ="submit" id="submit">Submit</button> 
         </div>
-
-        <script src="map.js"></script>
-        <script type="text/babel" src="weather.js"></script>
-
+        <script src="add_spot_mobile.js"></script>
     </body>
     
 </html>
