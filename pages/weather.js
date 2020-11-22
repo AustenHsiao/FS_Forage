@@ -1,13 +1,21 @@
 //HARDCODED 11/15+++++++++++++++WIP++++++++++++++++++
 let cityName = "Portland";
 let stateCode = "Oregon";
-let urlStart = "https://api.openweathermap.org/data/2.5/";
+let urlStart = "https://api.openweathermap.org/data/2.5/weather?";
 let weatherAPIkey = "6e093cb352d4d124394962457cd432bc";
 
-const getWeather = async () => {
-  const api = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${cityName},${stateCode}&units=imperial&appid=6e093cb352d4d124394962457cd432bc`
-  );
+//Queries the openweatherapi
+const getWeather = async (lat, lon) => {
+  let url =
+    urlStart +
+    "lat=" +
+    lat +
+    "&lon=" +
+    lon +
+    "&units=imperial" +
+    "&appid=" +
+    weatherAPIkey;
+  const api = await fetch(url);
   if (api.status === 404) {
     console.log("Data not found");
     return null;
@@ -17,11 +25,16 @@ const getWeather = async () => {
 };
 
 document.getElementById("testButton").addEventListener("click", () => {
-  populateWeather();
+  if (sessionStorage.currPos) {
+    let coordArray = sessionStorage.currPos.split(", ");
+    let lat = coordArray[0];
+    let long = coordArray[1];
+    populateWeather(lat, long);
+  }
 });
 
-async function populateWeather() {
-  let weather = await getWeather(); //fetch weather data from the API
+async function populateWeather(lat, long) {
+  let weather = await getWeather(lat, long); //fetch weather data from the API
   let weatherBox = document.getElementById("weatherBox");
   let weatherBoxContent;
 
