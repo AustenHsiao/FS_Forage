@@ -29,12 +29,14 @@
           <label for="speciesinput" name="specieslabel" id="specieslabel">Species Found:</label>
           <input type="text" name="speciesinput" id="speciesinput" required/>
           <label for="spotdetails" name="detailslabel" id = "detailslabel">Spot Details:(ingress/parking/conditions)</label>
-          <input type="text" name ="detailsinput" id="detailsinput" />
+          <textarea type="text" name ="detailsinput" id="detailsinput"></textarea>
           <button type="submit" name ="submit" id="submit">Create New Spot</button> 
           <div class="container map" name="mapdiv" id="mapdiv"></div>
-          <div name="mapdiscl" id="mapdiscl">Select new spot location:</div>
+          <div name="mapdiscl" id="mapdiscl">Select new spot location:
+            <div id="spotlocation" name="spotlocation"></div>
+          </div>
           <div id="mapBox" crossorigin="anonymous">map</div>
-          <div id="spotlocation" name="spotlocation"></div>
+          
         </form>
         <script src="add_spot.js"></script>
     </body>`

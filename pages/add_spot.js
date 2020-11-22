@@ -12,6 +12,8 @@ function placeMarker(map, location) {
             draggable: true
         });
     }
+    sessionStorage.setItem("newLocation", `${forageSpot.position.lat()}, ${forageSpot.position.lng()}`);
+    document.getElementById("spotlocation").innerHTML = sessionStorage.getItem('newLocation');
 }
 
 function initMap(){
@@ -56,7 +58,6 @@ submitBtn.onclick = function switchView(event) {
         return
     }
 
-    document.getElementById("spotlocation").value= forageSpot.position;
 }
 
 
