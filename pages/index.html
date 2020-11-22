@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="authors" content="Austen Hsiao, Sandy Wood, Travis McGowan">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Foraging App</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
-        <link rel="stylesheet" href="/forage.css" />
-        <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-        <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-        <script async="false" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1polXZ_aJhq0AMs9o27vqrNtva1pCLQ&callback=initMap"></script>
-        <script src="index.js"></script>
-    </head>
-    <body>
-        <div class="welcome" id="welcomeOverlay">
-            <div class="container welcome-text">
-                <h3 id="desc-title">Welcome to Forage App</h3>
-                <p id="desc">Forage app allows users to easily set and store foraging locations. Start by clicking on the Google Map, then filling in the details
-                    on the corresponding page. Your information will be displayed on the main page. Use the weather data to plan ahead!</p>
-                <button id="escape" onclick="clearOverlay()">Continue</button>
-            </div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="authors" content="Austen Hsiao, Sandy Wood, Travis McGowan" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foraging App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/forage.css" />
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script
+      async="false"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1polXZ_aJhq0AMs9o27vqrNtva1pCLQ&callback=initMap"
+    ></script>
+    <script src="index.js"></script>
+    <script src="weather.js" defer></script>
+    <script src="map.js"></script>
+  </head>
+  <body>
+    <div class="welcome" id="welcomeOverlay">
+      <div class="container welcome-text">
+        <h3 id="desc-title">Welcome to Forage App</h3>
+        <p id="desc">
+          Forage app allows users to easily set and store foraging locations.
+          Start by clicking on the Google Map, then filling in the details on
+          the corresponding page. Your information will be displayed on the main
+          page. Use the weather data to plan ahead!
+        </p>
+        <button id="escape" onclick="clearOverlay()">Continue</button>
+      </div>
+    </div>
 
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <h3 class="navbar-brand title">ForageApp</h3>
+      <a href="/">Map</a>
+      <a href="/add_spot.html">Add Spot</a>
+      <a href="#">Page 3</a>
+    </nav>
+    <div class="container whole">
+      <div class="container coord">
+        <h3 id="coordTitle">Pinned Foraging Locations</h3>
+        <div id="coordinatesBox"></div>
+      </div>
 
-        <nav class="navbar navbar-expand-lg bg-dark">
-                <h3 class="navbar-brand title">ForageApp</h3>
-                <a href="/">Map</a>
-                <a href="/add_spot.html">Add Spot</a>
-                <a href="#">Page 3</a>
-        </nav> 
-        <div class="container whole">
-            <div class="container coord"> 
-                <h3 id="coordTitle">Pinned Foraging Locations</h3>
-                <div id="coordinatesBox"></div>
-            </div>
+      <div class="container map">
+        <div id="mapBox" crossorigin="anonymous">map</div>
+      </div>
+    </div>
 
-            <div class="container map"> 
-                <div id="mapBox" crossorigin="anonymous">map</div>
-            </div>
-        </div>
+    <div class="container weather">
+      <div id="weatherBox">weather</div>
+    </div>
 
-        <div class="container weather"> 
-            <div id="weatherBox">weather</div>
-        </div>
-
-        <button id="testButton">HERE I AM</button> <!-- tests the weather api. sends to console and is hardcoded for ptown, currently-->
-
-        <script src="map.js"></script>
-        <script type="text/babel" src="weather.js"></script>
-    </body>
-    
+    <button id="testButton">HERE I AM</button>
+    <!-- tests the weather api. sends to console and is hardcoded for ptown, currently-->
+  </body>
 </html>
