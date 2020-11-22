@@ -25,9 +25,7 @@ function initMap(){
     });
 };
 
-
 let nextBtn = document.getElementById('next')
-
 
 nextBtn.onclick = function switchView(event) {
     //HIDE THINGS

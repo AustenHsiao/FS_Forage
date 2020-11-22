@@ -13,7 +13,7 @@
       <script async="false" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1polXZ_aJhq0AMs9o27vqrNtva1pCLQ&callback=initMap"></script>
     </head>
     <body>
-        <form action="/index.html" method="post" class="grid-container">
+        <div class="grid-container">
           <div  name="tborder" id = "tborder"></div>
           <div  name="lborder" id = "lborder"></div>
           <div  name="rborder" id = "rborder"></div>
@@ -30,12 +30,11 @@
           <input type="text" name="speciesinput" id="speciesinput" required/>
           <label for="spotdetails" name="detailslabel" id = "detailslabel">Spot Details:(ingress/parking/conditions)</label>
           <input type="text" name ="detailsinput" id="detailsinput" />
-          <button type="submit" name ="submit" id="submit">Create New Spot</button> 
+          <button name ="submit" id="submit">Create New Spot</button> 
           <div class="container map" name="mapdiv" id="mapdiv"></div>
           <div name="mapdiscl" id="mapdiscl">Select new spot location:</div>
           <div id="mapBox" crossorigin="anonymous">map</div>
-          <div id="spotlocation" name="spotlocation"></div>
-        </form>
+        </div>
         <script src="add_spot.js"></script>
     </body>`
     
