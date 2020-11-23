@@ -36,13 +36,13 @@ body {
 .coord.container {
   max-width: 32.5vw;
   min-width: 32.5vw;
-  background-color: rgba(0, 255, 0, 0.4);
-  min-height: 30vw;
-  max-height: 30vw;
+  background-color: rgba(255, 255, 255, 0.8);
+  min-height: 39vw;
+  max-height: 39vw;
   display: inline-block;
   margin: 0;
   padding: 1vw;
-  color: white;
+  color: Black;
   font-size: 2vw;
   overflow: auto;
 }
@@ -50,12 +50,13 @@ body {
 .map.container {
   max-width: 62.5vw;
   min-width: 62.5vw;
-  background-color: rgba(255, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.8);
   font-size: 1vw;
   min-height: 40vw;
+  max-height: 40vw;
   margin: 0;
   padding: 1vw;
-  color: white;
+  color: Black;
   font-size: 2vw;
   font-weight: bold;
 }
@@ -63,12 +64,12 @@ body {
 .weather.container {
   min-width: 95vw;
   max-width: 95vw;
-  background-color: rgba(0, 0, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.8);
   font-size: 1vw;
   min-height: 10vw;
   display: block;
   padding: 1vw;
-  color: white;
+  color: Black;
   font-size: 2vw;
   font-weight: bold;
 }
@@ -78,6 +79,7 @@ body {
   min-width: 100%;
   margin-top: 1vw;
   justify-content: center;
+  margin-bottom: 1vw;
 }
 
 #mapBox {

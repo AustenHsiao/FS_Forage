@@ -1,7 +1,5 @@
 var forageSpot;
 
-let locations = [];
-
 function placeMarker(map, location) {
     if(forageSpot>''){
         forageSpot.setPosition(location);
@@ -40,27 +38,29 @@ submitBtn.onclick = function switchView(event) {
 
     if (nmInpt.value.trim ==''){
         alert('Please enter a name for this spot')
-        return
+        return false;
     }
 
     if (spcInpt.value.trim ==''){
         alert('Please enter which species you find at this spot')
-        return
+        return false;
     }
 
     if (detInpt.value.trim ==''){
         alert('Please enter a brief description of the spot')
-        return
+        return false;
     }
 
     if(!(forageSpot>'')){
         alert('Please select a location to record by clicking on the map')
-        return
+        return false;
     }
 
+    let data = {
+        title: nmInpt.value,
+        specie: spcInpt.value,
+        detail: detInpt.value,
+        location: sessionStorage.getItem("newLocation")
+    };
+    sessionStorage.setItem("newSpot", JSON.stringify(data));
 }
-
-
-
-
-
