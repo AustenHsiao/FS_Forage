@@ -99,6 +99,7 @@ body {
 }
 
 .welcome {
+  display: none;
   z-index: 3;
   position: fixed;
   padding-top: 15vw;
