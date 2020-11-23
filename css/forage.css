@@ -1,6 +1,7 @@
 nav {
   min-height: 5vw;
   height: 5vw;
+  max-height: 5vw;
 }
 
 body {
@@ -21,9 +22,9 @@ body {
   margin-right: 1vw;
   padding-left: 1vw;
   padding-right: 1vw;
-  padding-top: 1.5vw;
+  padding-top: 1.8vw;
   color: lightgray;
-  height: 100%;
+  height: 5vw;
   font-weight: bold;
 }
 
@@ -94,7 +95,6 @@ body {
 
 #coordTitle {
   font-size: 1.5vw;
-  text-decoration: underline;
   font-weight: bold;
 }
 

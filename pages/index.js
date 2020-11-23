@@ -44,11 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
 function addSpot(counter, name, specie, detail, latlng){
     let div = document.createElement("div");
     div.style.display = "block";
-    div.innerHTML = `Name: ${name}<br>Species: ${specie}<br>Details: ${detail}<br>Location: ${latlng}`;
+    div.innerHTML = `Name: ${name}<br>Species: ${specie}<br>Details: ${detail}<br>Location: ${latlng}<br>`;
     document.getElementById("coordinatesBox").appendChild(div);
 
     let buttonCenter = document.createElement("button");
-    buttonCenter.style.display = "block";
+    buttonCenter.style.display = "inline-block";
     buttonCenter.style.border = "none";
     buttonCenter.style.background = "lightskyblue";
     buttonCenter.innerHTML = "Center";
@@ -65,6 +65,9 @@ function addSpot(counter, name, specie, detail, latlng){
     buttonDelete.addEventListener("click", () => removeSpot(counter));
 
     div.style.border = "solid";
+    div.style.borderWidth = "0.15vw";
+    div.style.padding = "0.3vw";
+    div.style.margin = "0.1vw";
 };
 
 function initMap(){
@@ -107,3 +110,4 @@ function removeSpot(num){
     sessionStorage.setItem("newSpot", ""); // this prevents data stored in session from reappearing as a forage spot
     return;
 }
+

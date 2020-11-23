@@ -1,5 +1,5 @@
 const express = require('express');
-const session = require('express-session');
+//const session = require('express-session');
 var bodyParser = require('body-parser');
 var app = express();
 
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/index.html', (req, res) => {
-    //CREATE SESSION
+    /*//CREATE SESSION
     let nuSpot = app.use(
       session({
       store: new session.MemoryStore(),
@@ -38,7 +38,7 @@ app.post('/index.html', (req, res) => {
     console.log(nuSpot.species)
     console.log(nuSpot.details)
     console.log(nuSpot.location)
-    
+    */
     res.status(200);
     res.sendFile(path.join(__dirname + '/pages/index.html'));
 });

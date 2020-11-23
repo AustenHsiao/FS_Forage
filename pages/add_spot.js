@@ -28,7 +28,7 @@ function initMap(){
 let submitBtn = document.getElementById('submit')
 
 submitBtn.onclick = function switchView(event) {
-    console.log("submit onclick running")
+    //console.log("submit onclick running")
     //VALIDATE ENTRIES
     let nmInpt = document.getElementById('nameinput');
     let spcInpt = document.getElementById('speciesinput');
