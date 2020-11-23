@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const clearOverlay = () => {
     document.getElementById("welcomeOverlay").style.display = "none";
-    document.cookie = 'forage=true';
+    document.cookie = 'forage=true; sameSite=none secure';
 };
 
 document.addEventListener("DOMContentLoaded", () => {
