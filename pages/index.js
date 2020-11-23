@@ -20,6 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let rawMaster = sessionStorage.getItem("master");
     let rawData = sessionStorage.getItem("newSpot");
 
+    if(!rawMaster && !rawData){
+        return;
+    }
+
     if(!rawMaster && rawData){
         sessionStorage.setItem("master", rawData);
     }else if(rawMaster && rawData){
