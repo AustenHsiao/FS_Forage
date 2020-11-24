@@ -1,5 +1,3 @@
-let map;
-
 document.addEventListener("DOMContentLoaded", () => {
     if(!(/forage=true/.test(document.cookie))){
         document.getElementById("welcomeOverlay").style.display = "block";
@@ -73,7 +71,7 @@ function addSpot(counter, name, specie, detail, latlng){
 };
 
 function initMap(){
-    map = new google.maps.Map(document.getElementById("mapBox"), {
+    window.map = new google.maps.Map(document.getElementById("mapBox"), {
         zoom: 13,
         center: { lat: 45.5111, lng: -122.6834 }, //portland state university
     });
@@ -97,6 +95,7 @@ function resetCenter(latlngString){
     let parsedLat = parseFloat(parsedLocation[0]);
     let parsedLng = parseFloat(parsedLocation[1]);
     map.setCenter({lat: parsedLat, lng: parsedLng});
+    populateWeather(parsedLat, parsedLng);
 };
 
 function removeSpot(num){

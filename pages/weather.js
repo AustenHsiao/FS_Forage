@@ -1,6 +1,3 @@
-//HARDCODED 11/15+++++++++++++++WIP++++++++++++++++++
-let cityName = "Portland";
-let stateCode = "Oregon";
 let urlStart = "https://api.openweathermap.org/data/2.5/weather?";
 let weatherAPIkey = "6e093cb352d4d124394962457cd432bc";
 
@@ -24,14 +21,14 @@ const getWeather = async (lat, lon) => {
   return data;
 };
 
-document.getElementById("testButton").addEventListener("click", () => {
+/*document.getElementById("testButton").addEventListener("click", () => {
   if (sessionStorage.currPos) {
     let coordArray = sessionStorage.currPos.split(", ");
     let lat = coordArray[0];
     let long = coordArray[1];
     populateWeather(lat, long);
   }
-});
+});*/
 
 async function populateWeather(lat, long) {
   let weather = await getWeather(lat, long); //fetch weather data from the API
