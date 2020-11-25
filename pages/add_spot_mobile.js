@@ -14,6 +14,33 @@ function placeMarker(map, location) {
     }
 }
 
+function initMap() {
+    var pos;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+      }, () => {
+        // Browser supports geolocation, but user has denied permission
+        pos= { lat: 45.5111, lng: -122.6834 };//portland state university
+      });
+    } else {
+        pos= { lat: 45.5111, lng: -122.6834 };//portland state university
+    }
+
+    let map = new google.maps.Map(document.getElementById("mapBox"), {
+        zoom: 13,
+        center: pos, 
+    });
+
+    google.maps.event.addListener(map, 'click', function(spot) {
+        placeMarker(map, spot.latLng);
+    });
+}
+
+/*
 function initMap(){
     let map = new google.maps.Map(document.getElementById("mapBox"), {
         zoom: 13,
@@ -24,6 +51,7 @@ function initMap(){
         placeMarker(map, spot.latLng);
     });
 };
+*/
 
 let nextBtn = document.getElementById('next')
 
@@ -58,4 +86,7 @@ nextBtn.onclick = function switchView(event) {
     document.getElementById('mapBox').style.zIndex="1"
     document.getElementById('submit').style.visibility="visible";
     document.getElementById('submit').style.zIndex="1";
+
+    document.getElementById('zipinput').focus();
 }
+
