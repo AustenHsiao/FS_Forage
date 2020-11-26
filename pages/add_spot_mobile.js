@@ -1,4 +1,5 @@
 var forageSpot;
+var pos;
 
 let locations = [];
 
@@ -14,35 +15,25 @@ function placeMarker(map, location) {
     }
 }
 
-/*
-function initMap() {
-    var pos;
+function center_current() {
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-      }, () => {
-        // Browser supports geolocation, but user has denied permission
-        pos= { lat: 45.5111, lng: -122.6834 };//portland state university
+    }, () => {
+        //don't update the postion variable if they deny it
       });
     } else {
-        pos= { lat: 45.5111, lng: -122.6834 };//portland state university
+        //don't update the postion variable if system doesn't have functionality
     }
-
-    let map = new google.maps.Map(document.getElementById("mapBox"), {
-        zoom: 13,
-        center: pos, 
-    });
-
-    google.maps.event.addListener(map, 'click', function(spot) {
-        placeMarker(map, spot.latLng);
-    });
 }
-*/
+
 
 function initMap(){
+    center_current();
     let map = new google.maps.Map(document.getElementById("mapBox"), {
         zoom: 13,
         center: { lat: 45.5111, lng: -122.6834 }, //portland state university
@@ -51,6 +42,7 @@ function initMap(){
     google.maps.event.addListener(map, 'click', function(spot) {
         placeMarker(map, spot.latLng);
     });
+//    center_current();
 };
 
 let nextBtn = document.getElementById('next')
@@ -75,21 +67,31 @@ nextBtn.onclick = function switchView(event) {
     document.getElementById('next').style.visibility="hidden";
     document.getElementById('next').style.zIndex="-1"
     //REVEAL THINGS
-    document.getElementById('detail').style.zIndex="2"
     document.getElementById('ziplabel').style.visibility="visible";
     document.getElementById('ziplabel').style.zIndex="1"
     document.getElementById('zipinput').style.visibility="visible";
     document.getElementById('zipinput').style.zIndex="1"
     document.getElementById('mapdiv').style.visibility="visible";
-    document.getElementById('mapdiv').style.zIndex="2"
+    document.getElementById('mapdiv').style.zIndex="1"
     document.getElementById('mapdiscl').style.visibility="visible";
     document.getElementById('mapdiscl').style.zIndex="1"
     document.getElementById('mapBox').style.visibility="visible";
-    google.maps.event.trigger(map, 'resize'); 
     document.getElementById('mapBox').style.zIndex="1"
     document.getElementById('submit').style.visibility="visible";
-    document.getElementById('submit').style.zIndex="1";
+    document.getElementById('submit').style.zIndex="2";
 
     document.getElementById('zipinput').focus();
+
+    if(pos){
+        console.log("inside of pos check")
+        let map = new google.maps.Map(document.getElementById("mapBox"), {
+            zoom: 13,
+            center: pos, //portland state university
+        });
+    
+        google.maps.event.addListener(map, 'click', function(spot) {
+            placeMarker(map, spot.latLng);
+        });
+    }
 }
 

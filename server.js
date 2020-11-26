@@ -18,27 +18,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/index.html', (req, res) => {
-    /*//CREATE SESSION
-    let nuSpot = app.use(
-      session({
-      store: new session.MemoryStore(),
-      secret: 'somesecret',
-      resave: false,
-      saveUninitialized: false,
-      cookie: {expires: new Date(253402300000000)}
-      })
-  );
-  //SAVE INFO TO SESSION
-    nuSpot.spotName = req.body.nameinput;
-    nuSpot.species = req.body.speciesinput;
-    nuSpot.details = req.body.detailsinput;
-    nuSpot.location = req.body.spotlocation;
-
-    console.log(nuSpot.spotName)
-    console.log(nuSpot.species)
-    console.log(nuSpot.details)
-    console.log(nuSpot.location)
-    */
     res.status(200);
     res.sendFile(path.join(__dirname + '/pages/index.html'));
 });
