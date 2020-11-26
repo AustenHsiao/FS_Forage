@@ -12,33 +12,15 @@ html, body, .grid-container { height: 100%; margin: 0; }
   margin: 1fr;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-rows: repeat(13, 1fr);
   gap: 2px 2px;
+  width: 480px;
+  height: 853px;
 }
 
-#tborder {
-  grid-column: 1/-1;
-  grid-row: 1/2;
-}
-
-#lborder {
-  grid-column: 1/1;
-  grid-row: 2/-1;
-}
-
-#rborder {
-  grid-column: 8/-1;
-  grid-row: 2/-1;
-}
-
-#bborder {
-  grid-column: 2/9;
-  grid-row: 12/-1;
-}
-
-#title {
+#h1 {
   grid-column: 2/8;
-  grid-row: 2/3;
+  grid-row: 2;
   text-align: center;
   font-size: 350%;
   background-color: rgba(255,255,255,0.5);  
@@ -48,81 +30,81 @@ html, body, .grid-container { height: 100%; margin: 0; }
 
 #detail {
   grid-column: 2/8;
-  grid-row: 3/10;
+  grid-row: 3/13;
   justify-content: space-around;
   color: black;
   background-color: rgba(255,255,255,0.5);  
 }
 
 #namelabel {
-  grid-column: 2/4;
-  grid-row: 3/4;
+  grid-column: 2/8;
+  grid-row: 3;
+  text-align: center;
   font-size: xx-large;
-  text-align: right;
-  font-weight: 500;
+  font-weight: bolder;
   max-width: 100%;
 }
 
 #nameinput {
-  grid-column: 4/8;
-  grid-row: 3/4;
-  font-size: 25px;
+  grid-column: 2/8;
+  grid-row: 4;
+  font-size: large;
 }
 
 #specieslabel {
-  grid-column: 2/4;
-  grid-row: 4/5;
+  grid-column: 2/8;
+  grid-row: 5;
   font-size: xx-large;
-  text-align: right;
+  text-align: center;
   vertical-align: text-bottom;
-  font-weight: 500;
+  font-weight: bolder;
   max-width: 100%;
 }
 
 #speciesinput {
-  grid-column: 4/8;
-  grid-row: 4/5;
-  font-size: 25px;
+  grid-column: 2/8;
+  grid-row: 6;
+  font-size: large;
 }
 
 #detailslabel {
   grid-column: 2/8;
-  grid-row: 5/6;
+  grid-row: 7;
   font-size: xx-large;
   text-align: center;
-  font-weight: 500;
+  font-weight: bolder;
   max-width: 100%;
 }
 
 #detailsinput {
   grid-column: 2/8;
-  grid-row: 6/10;
+  grid-row: 8/11;
   font-size: 25px;
 }
 
 #next {
   grid-column: 2/8;
-  grid-row: 10/11;
+  grid-row: 11/12;
   font-size: 200%;
   z-index: 1;
 }
 
 #submit {
   grid-column: 2/8;
-  grid-row: 10/11;
+  grid-row: 11/12;
   font-size: 200%;
   z-index: 2;
 }
 
 #cancel {
   grid-column: 2/8;
-  grid-row: 11/12;
+  grid-row: 12/13;
   font-size: 200%;
 }
 
 #mapdiv {
   grid-column: 2/8;
-  grid-row: 5/10;
+  grid-row: 6/11;
   border-style: solid;
   border-width: 1px;
   border-color:white;
@@ -133,26 +115,28 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-row: 4/5;
   z-index: 2;
   background-color: rgba(255,255,255,0.5);  
+  font-weight: bolder;
   font-size: xx-large;
 }
 
 #mapBox {
   grid-column:2/8;
-  grid-row: 5/10;
+  grid-row: 5/11;
   background-color: rgba(255,255,255,0.5);  
 }
 
 #ziplabel {
-  grid-column: 2/4;
-  grid-row: 3/4;
+  grid-column: 2/8;
+  grid-row: 2;
+  text-align: center;
   font-size: xx-large;
   background-color: rgba(255,255,255,0.5);  
   font-weight: 500;
 }
 
 #zipinput {
-  grid-column: 4/8;
-  grid-row: 3/4;
+  grid-column: 2/8;
+  grid-row: 3;
   z-index: 2;
   font-size: 25px;
 }

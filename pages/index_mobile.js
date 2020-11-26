@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let rawData = sessionStorage.getItem("newSpot");
 
     if(!rawMaster && !rawData){
+        let div = document.createElement("div");
+        div.style.display = "block";
+        div.innerHTML = `You have not saved any spots yet <br>`;
+        document.getElementById("coordinatesBox").appendChild(div);
         return;
     }
 

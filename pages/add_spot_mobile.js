@@ -38,6 +38,10 @@ function recenter_map() {
 
     let zippy = document.getElementById('zipinput').value
 
+    if(!zippy){
+        return
+    }
+
     if (zippy.length =5) {
         if(!isNaN(zippy)){
 
@@ -83,6 +87,8 @@ let nextBtn = document.getElementById('next')
 nextBtn.onclick = function switchView(event) {
     event.preventDefault();
     //HIDE THINGS
+    document.getElementById('h1').style.visibility="hidden";
+    document.getElementById('h1').style.zIndex="-1"
     document.getElementById('detail').style.visibility="hidden";
     document.getElementById('detail').style.zIndex="-1"
     document.getElementById('namelabel').style.visibility="hidden";
@@ -112,8 +118,6 @@ nextBtn.onclick = function switchView(event) {
     document.getElementById('mapBox').style.zIndex="1"
     document.getElementById('submit').style.visibility="visible";
     document.getElementById('submit').style.zIndex="2";
-
-    document.getElementById('zipinput').focus();
 
     if(pos){
         let map = new google.maps.Map(document.getElementById("mapBox"), {
