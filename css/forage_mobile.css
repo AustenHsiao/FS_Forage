@@ -1,0 +1,129 @@
+body {
+  background-image: url("https://images.pexels.com/photos/3672955/pexels-photo-3672955.jpeg?cs=srgb&dl=pexels-carboxaldehyde-3672955.jpg&fm=jpg"),
+    url("https://i.imgur.com/vRXGky8.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat, repeat;
+}
+
+.navbar .navbar-brand {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+@media (max-width: 575px) {
+  .navbar-toggler-icon {
+    background-image: url("https://mdbootstrap.com/img/svg/hamburger4.svg?color=ffffff");
+  }
+
+  .navbar-toggle {
+    background-color: transparent;
+  }
+}
+
+@media (min-width: 576px) {
+  .navbar-toggle {
+    display: none;
+  }
+}
+
+.nav-item {
+  margin: 1em;
+}
+
+.navbar-text,
+.nav-link {
+  color: lightgray;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}
+
+.coord.container {
+  max-width: 32.5vw;
+  min-width: 32.5vw;
+  background-color: rgba(255, 255, 255, 0.8);
+  min-height: 39vw;
+  max-height: 39vw;
+  display: inline-block;
+  margin: 0;
+  padding: 1vw;
+  color: Black;
+  font-size: 2vw;
+  overflow-y: scroll;
+  word-wrap: break-word;
+}
+
+.map.container {
+  max-width: 62.5vw;
+  min-width: 62.5vw;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1vw;
+  min-height: 39vw;
+  max-height: 39vw;
+  margin: 0;
+  padding: 1vw;
+  color: Black;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.weather.container {
+  min-width: 95vw;
+  max-width: 95vw;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1vw;
+  min-height: 10vw;
+  display: block;
+  padding: 1vw;
+  color: Black;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.whole.container {
+  display: flex;
+  min-width: 100%;
+  margin-top: 1vw;
+  justify-content: center;
+  margin-bottom: 1vw;
+}
+
+#mapBox {
+  height: 100%;
+}
+
+#coordinatesBox {
+  overflow: auto;
+  font-size: 1vw;
+}
+
+#coordTitle {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.welcome {
+  display: none;
+  z-index: 3;
+  position: fixed;
+  padding-top: 15vw;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+#escape {
+  border-style: none;
+  background-color: beige;
+  margin-left: 50%;
+  margin-right: 50%;
+}

@@ -22,6 +22,10 @@ app.post('/index.html', (req, res) => {
     res.sendFile(path.join(__dirname + '/pages/index.html'));
 });
 
+app.get('/index_mobile.html', (req, res) => {
+  res.status(200);
+  res.sendFile(path.join(__dirname + '/pages/index_mobile.html'));
+});
 
 app.get('/add_spot.html',  (req, res) => {
   console.log("in add spot get");

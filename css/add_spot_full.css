@@ -54,12 +54,13 @@ body,
 
 .hlink:hover {
   background-color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
 }
 
 #nav1 {
   grid-column: 2/8;
   grid-row: 2/3;
-  color: white;
+  font-size: x-large;
   font-weight: bold;
   text-align: center;
   z-index: 1;
@@ -68,9 +69,10 @@ body,
 #nav2 {
   grid-column: 8/14;
   grid-row: 2/3;
+  font-size: x-large;
   font-weight: bold;
   text-align: center;
-  color: white;
+  color: black;
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 1;
   text-decoration: underline;
@@ -79,7 +81,8 @@ body,
 #nav3 {
   grid-column: 14/20;
   grid-row: 2/3;
-  color: white;
+/*  color: white; */
+  font-size: x-large;
   font-weight: bold;
   text-align: center;
   z-index: 1;
