@@ -14,6 +14,7 @@ function placeMarker(map, location) {
     }
 }
 
+/*
 function initMap() {
     var pos;
     if (navigator.geolocation) {
@@ -39,8 +40,8 @@ function initMap() {
         placeMarker(map, spot.latLng);
     });
 }
+*/
 
-/*
 function initMap(){
     let map = new google.maps.Map(document.getElementById("mapBox"), {
         zoom: 13,
@@ -51,11 +52,11 @@ function initMap(){
         placeMarker(map, spot.latLng);
     });
 };
-*/
 
 let nextBtn = document.getElementById('next')
 
 nextBtn.onclick = function switchView(event) {
+    event.preventDefault();
     //HIDE THINGS
     document.getElementById('detail').style.visibility="hidden";
     document.getElementById('detail').style.zIndex="-1"
@@ -74,15 +75,17 @@ nextBtn.onclick = function switchView(event) {
     document.getElementById('next').style.visibility="hidden";
     document.getElementById('next').style.zIndex="-1"
     //REVEAL THINGS
+    document.getElementById('detail').style.zIndex="2"
     document.getElementById('ziplabel').style.visibility="visible";
     document.getElementById('ziplabel').style.zIndex="1"
     document.getElementById('zipinput').style.visibility="visible";
     document.getElementById('zipinput').style.zIndex="1"
     document.getElementById('mapdiv').style.visibility="visible";
-    document.getElementById('mapdiv').style.zIndex="1"
+    document.getElementById('mapdiv').style.zIndex="2"
     document.getElementById('mapdiscl').style.visibility="visible";
     document.getElementById('mapdiscl').style.zIndex="1"
     document.getElementById('mapBox').style.visibility="visible";
+    google.maps.event.trigger(map, 'resize'); 
     document.getElementById('mapBox').style.zIndex="1"
     document.getElementById('submit').style.visibility="visible";
     document.getElementById('submit').style.zIndex="1";
