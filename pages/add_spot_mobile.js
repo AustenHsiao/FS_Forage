@@ -31,6 +31,42 @@ function center_current() {
     }
 }
 
+function recenter_map() {
+    geocoder = new google.maps.Geocoder();
+
+    let zippy = document.getElementById('zipinput').value
+
+    if (zippy.length =5) {
+        if(!isNaN(zippy)){
+
+            var lt = '';
+            var lg = '';
+
+            geocoder = new google.maps.Geocoder();
+
+            geocoder.geocode( { 'address': zippy}, function(results, status) {
+            
+                if (status == google.maps.GeocoderStatus.OK) {
+                    lt = results[0].geometry.location.lat();
+                    lg = results[0].geometry.location.lng();
+                } else {
+                    alert("Geocode was not successful for the following reason: " + status);
+                }
+            });
+            pos = {lat: + lt, lng:+ lg};
+
+
+        } else {
+            document.getElementById('zipinput').value = ''
+            alert("please enter a valid zip code if you wish to center the map")
+        }
+    } else {
+        document.getElementById('zipinput').value = ''
+        alert("please enter a valid zip code if you wish to center the map")
+    }
+
+
+}
 
 function initMap(){
     center_current();
@@ -42,7 +78,6 @@ function initMap(){
     google.maps.event.addListener(map, 'click', function(spot) {
         placeMarker(map, spot.latLng);
     });
-//    center_current();
 };
 
 let nextBtn = document.getElementById('next')
@@ -83,7 +118,6 @@ nextBtn.onclick = function switchView(event) {
     document.getElementById('zipinput').focus();
 
     if(pos){
-        console.log("inside of pos check")
         let map = new google.maps.Map(document.getElementById("mapBox"), {
             zoom: 13,
             center: pos, //portland state university
@@ -92,6 +126,8 @@ nextBtn.onclick = function switchView(event) {
         google.maps.event.addListener(map, 'click', function(spot) {
             placeMarker(map, spot.latLng);
         });
+
+        document.getElementById("zipinput").addEventListener("focusout", recenter_map)
     }
 }
 
