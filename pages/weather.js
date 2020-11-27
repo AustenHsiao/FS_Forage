@@ -21,19 +21,17 @@ const getWeather = async (lat, lon) => {
   return data;
 };
 
-/*document.getElementById("testButton").addEventListener("click", () => {
-  if (sessionStorage.currPos) {
-    let coordArray = sessionStorage.currPos.split(", ");
-    let lat = coordArray[0];
-    let long = coordArray[1];
-    populateWeather(lat, long);
-  }
-});*/
-
 async function populateWeather(lat, long) {
   let weather = await getWeather(lat, long); //fetch weather data from the API
   let weatherBox = document.getElementById("weatherBox");
   let weatherBoxContent;
+
+  //Delete old content of the weatherbox if it exists
+  if (weatherBox.hasChildNodes()) {
+    while (weatherBox.firstChild) {
+      weatherBox.removeChild(weatherBox.firstChild);
+    }
+  }
 
   if (!weather) {
     //getWeather returned null, 404 error on API
@@ -44,44 +42,79 @@ async function populateWeather(lat, long) {
     weatherBoxContent.appendChild(error_message);
     weatherBox.appendChild(weatherBoxContent);
   } else {
-    //weather successfully retreived
-    let tbody = document.createElement("tbody");
-    let tableRow;
-    let displayValues = {
-      Temperature: weather.main.temp,
-      Humidity: weather.main.humidity,
-      Conditions: weather.weather[0].main,
-    };
-    weatherBoxContent = document.createElement("table");
-    let keys = Object.keys(displayValues);
-
-    keys.forEach((key) => {
-      tableRow = makeWeatherRow(key, displayValues[key]);
-      tbody.appendChild(tableRow);
-      weatherBoxContent.appendChild(tbody);
-    });
+    let currentWeather = makeCurrentWeather(weather);
+    //append our newly-created weather information
+    weatherBox.appendChild(currentWeather);
   }
-
-  //Delete old content of the weatherbox if it exists
-  if (weatherBox.hasChildNodes()) {
-    while (weatherBox.firstChild) {
-      weatherBox.removeChild(weatherBox.firstChild);
-    }
-  }
-  //append our newly-created weatehr information
-  weatherBox.appendChild(weatherBoxContent);
   return;
 }
 
-function makeWeatherRow(title, value) {
-  let row = document.createElement("tr");
-  let titleCell = document.createElement("td");
-  titleCell.appendChild(document.createTextNode(title));
-  let valueCell = document.createElement("td");
-  titleCell.appendChild(document.createTextNode(value));
+function makeCurrentWeather(weather_data) {
+  //create the div containing the current weather conditions for passed-in weather data
+  let currentWeaDiv = document.createElement("div");
+  currentWeaDiv.className = "weatherCurrent";
+
+  //create the image element that will hold the current weather's icon
+  let weatherIcon = makeWeatherIcon(weather_data.weather[0].icon);
+  currentWeaDiv.appendChild(weatherIcon); //append icon to current weather
+
+  //Create the title
+  let title = document.createElement("span");
+  let titleText;
+  title.className = "weatherTitle";
+  if (weather_data.name) {
+    titleText = document.createTextNode(
+      "Current Weather in: " + weather_data.name
+    );
+  } else {
+    titleText = document.createTextNode(
+      "Current weather at: " +
+        weather_data.coord.lat +
+        ", " +
+        weather_data.coord.lon
+    );
+  }
+  title.appendChild(titleText);
+  currentWeaDiv.appendChild(title);
+
+  //Fill in the rest of the relevant info
+  let relevant = {
+    Temperature: weather_data.main.temp + "F",
+    Humidity: weather_data.main.humidity + "%",
+    Pressure: weather_data.main.pressure + " hPa",
+    Conditions: weather_data.weather[0].description,
+  };
+
+  for (const key in relevant) {
+    if (relevant.hasOwnProperty(key)) {
+      const element = relevant[key];
+      currentWeaDiv.appendChild(makeWeatherLine(key, element));
+    }
+  }
+
+  return currentWeaDiv;
+}
+
+function makeWeatherIcon(icon_string) {
+  let weatherURL =
+    "https://openweathermap.org/img/wn/" + icon_string + "@2x.png";
+  let imageElement = new Image(100, 100);
+  imageElement.src = weatherURL;
+  imageElement.className = "weatherImage";
+  return imageElement;
+}
+
+function makeWeatherLine(title, value) {
+  let row = document.createElement("div");
+  let titleCell = document.createElement("span");
+  titleCell.appendChild(document.createTextNode(title + ": "));
+  let valueCell = document.createElement("span");
+  valueCell.appendChild(document.createTextNode(value));
 
   row.appendChild(titleCell);
   row.appendChild(valueCell);
+
+  row.className = "weatherLine";
 
   return row;
 }
