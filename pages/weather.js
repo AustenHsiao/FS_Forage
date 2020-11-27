@@ -60,9 +60,16 @@ async function populateWeather(lat, long) {
       tbody.appendChild(tableRow);
       weatherBoxContent.appendChild(tbody);
     });
-
-    weatherBox.appendChild(weatherBoxContent);
   }
+
+  //Delete old content of the weatherbox if it exists
+  if (weatherBox.hasChildNodes()) {
+    while (weatherBox.firstChild) {
+      weatherBox.removeChild(weatherBox.firstChild);
+    }
+  }
+  //append our newly-created weatehr information
+  weatherBox.appendChild(weatherBoxContent);
   return;
 }
 
