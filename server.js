@@ -16,6 +16,19 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/pages/index.html'));
 });
 
+/*
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    return true;
+  } else {
+    return false;
+  }
+}
+
+var x = window.matchMedia("(max-width: 700px)")
+myFunction(x) // Call listener function at run time
+*/
+
 app.post('/index.html', (req, res) => {
     res.status(200);
     res.sendFile(path.join(__dirname + '/pages/index.html'));
