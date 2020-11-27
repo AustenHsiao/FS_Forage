@@ -4,7 +4,7 @@ function initMap(latlngString){
     let parsedLng = parseFloat(parsedLocation[1]);
     window.map = new google.maps.Map(document.getElementById("mapBox"), {
         zoom: 13,
-        center: {lat: parsedLat, lng: parsedLng}, //portland state university
+        center: {lat: parsedLat, lng: parsedLng}, 
     });
 };
 

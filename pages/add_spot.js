@@ -28,13 +28,10 @@ function initMap(){
 let submitBtn = document.getElementById('submit')
 
 submitBtn.onclick = function switchView(event) {
-    //console.log("submit onclick running")
     //VALIDATE ENTRIES
     let nmInpt = document.getElementById('nameinput');
     let spcInpt = document.getElementById('speciesinput');
     let detInpt = document.getElementById('detailsinput');
-
-    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (nmInpt.value.trim ==''){
         alert('Please enter a name for this spot')

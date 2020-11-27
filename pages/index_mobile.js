@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     if(!(/forage=true/.test(document.cookie))){
         document.getElementById("welcomeOverlay").style.display = "block";
-        document.cookie = 'forage=true; sameSite=none secure';
+        document.cookie = 'forage=true; sameSite=None secure';
     }else{
         document.getElementById("welcomeOverlay").style.display = "none";
     }
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const clearOverlay = () => {
     document.getElementById("welcomeOverlay").style.display = "none";
-    document.cookie = 'forage=true; sameSite=none secure';
+    document.cookie = 'forage=true; sameSite=None secure';
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -55,7 +55,8 @@ function addSpot(name, specie, detail, counter){
     div.style.margin = "0.1vw";
 
     div.id=`${counter}`
-    div.href=`/spot_detail_mobile.html?id=${div.id}`
+//    div.href=`/spot_detail_mobile.html?id=${div.id}`
+    div.href=`/spot_detail_mobile.html`
     div.style.zIndex="99";
     div.style.cursor="pointer"
 

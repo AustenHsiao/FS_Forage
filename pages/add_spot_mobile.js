@@ -14,7 +14,7 @@ function placeMarker(map, location) {
         });
     }
     sessionStorage.setItem("newLocation", `${forageSpot.position.lat()}, ${forageSpot.position.lng()}`);
-    document.getElementById("spotlocation").innerHTML = sessionStorage.getItem('newLocation');
+//    document.getElementById("spotlocation").innerHTML = sessionStorage.getItem('newLocation');
 }
 
 function center_current() {
@@ -138,6 +138,8 @@ nextBtn.onclick = function switchView(event) {
     document.getElementById('submit').style.visibility="visible";
     document.getElementById('submit').style.zIndex="2";
 
+    console.log(`pos: ${pos}`)
+
     if(pos){
         let map = new google.maps.Map(document.getElementById("mapBox"), {
             zoom: 13,
@@ -155,16 +157,23 @@ nextBtn.onclick = function switchView(event) {
 let submitBtn = document.getElementById('submit')
 
 submitBtn.onclick = function switchView(event) {
-    //VALIDATE ENTRIES
+    let nmInpt = document.getElementById('nameinput').value;
+    let spcInpt = document.getElementById('speciesinput').value;
+    let detInpt = document.getElementById('detailsinput').value;
+    
+    console.log(`nmInpt: ${nmInpt}`)
+    console.log(`spcInpt: ${spcInpt}`)
+    console.log(`detInpt: ${detInpt}`)
+
     if(!(forageSpot>'')){
         alert('Please select a location to record by clicking on the map')
         return false;
     }
 
     let data = {
-        title: nmInpt.value,
-        specie: spcInpt.value,
-        detail: detInpt.value,
+        title: nmInpt,
+        specie: spcInpt,
+        detail: detInpt,
         location: sessionStorage.getItem("newLocation")
     };
     sessionStorage.setItem("newSpot", JSON.stringify(data));

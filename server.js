@@ -2,8 +2,6 @@ const express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-//app.set('view engine', 'ejs');
-
 //create application/x-www-form-urlendcoded parser
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -43,14 +41,11 @@ app.get('/add_spot_mobile.html',  (req, res) => {
   res.end();
 });
 
-app.get('/spot_detail_mobile.html:id', function(req, res) {
-//  var id = req.params.id; 
-
+app.get('/spot_detail_mobile.html', function(req, res) {
   res.status(200);
   res.set({'Content-Type': 'text/html'})
   res.sendFile(path.join(__dirname + '/pages/spot_detail_mobile.html'));  
   res.end();
-  console.log("we get to the end of the server.js logic at least")
  });
 
 app.listen(port, () => {
