@@ -1,5 +1,3 @@
-//const session = require("express-session");
-
 document.addEventListener("DOMContentLoaded", () => {
     if(!(/forage=true/.test(document.cookie))){
         document.getElementById("welcomeOverlay").style.display = "block";
@@ -62,13 +60,7 @@ function addSpot(name, specie, detail, counter){
     div.style.cursor="pointer"
 
     div.addEventListener("click", function(){
-        
         sessionStorage.setItem("indexy", div.id);
-
-        console.log(`div.id: ${div.id}`)
-
-        console.log(`indexy session: ${sessionStorage.getItem("indexy")}`)
-
         window.location.replace(`${this.href}`)
     });
 

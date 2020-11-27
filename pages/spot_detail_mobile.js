@@ -1,8 +1,4 @@
-console.log("spot mobile detail js starting")
-
-
 function initMap(latlngString){
-    console.log("initMap running")
     let parsedLocation = latlngString.split(', ');
     let parsedLat = parseFloat(parsedLocation[0]);
     let parsedLng = parseFloat(parsedLocation[1]);
@@ -12,10 +8,8 @@ function initMap(latlngString){
     });
 };
 
-console.log("passed initMap")
 
 function addMarker(latlngString){
-    console.log("addMarker running")
     let parsedLocation = latlngString.split(', ');
     let parsedLat = parseFloat(parsedLocation[0]);
     let parsedLng = parseFloat(parsedLocation[1]);
@@ -23,15 +17,13 @@ function addMarker(latlngString){
         map,
         position: {lat: parsedLat, lng: parsedLng},
     });
+    populateWeather(parsedLat, parsedLng);
 };
 
-console.log("passed addMarker")
 
 document.addEventListener("DOMContentLoaded", () => {
     let indexy = sessionStorage.getItem("indexy");
 
-    console.log("dom content loaded running")
-    console.log(`indexy value: ${indexy}`)
     let counter = 0;
     (sessionStorage.getItem("master").split(',,,,,,,,')).forEach(dataPt => {
         parsedDataPt = JSON.parse(dataPt);
@@ -40,47 +32,27 @@ document.addEventListener("DOMContentLoaded", () => {
             initMap(parsedDataPt.location);
             addMarker(parsedDataPt.location);
             document.getElementById("spotname").textContent = parsedDataPt.title;
-            console.log(`spotname value: ${document.getElementById("spotname").textContent}`)
             return;
         }
         ++counter;
     });    
 });
 
-console.log("spot detail mobile ends")
-
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    var index = document.getElementById("indexy").value;
-
-    let counter = 0;
-    (sessionStorage.getItem("master").split(',,,,,,,,')).forEach(dataPt => {
-        parsedDataPt = JSON.parse(dataPt);
-
-        if(counter == index){
-            initMap(parsedDataPt.location);
-            addMarker(parsedDataPt.location);
-            document.getElementById("spotname").textContent = parsedDataPt.title;
-            return;
-        }
-        ++counter;
-    });
-
-});
-*/
-
-/*
-function removeSpot(num){
+function removeSpot(){
     if(!confirm("Are you sure you want to delete this foraging location?")){
         return;
     }
-    markersList[num].setMap(null);
-    var removeDiv = document.querySelector(`#coordinatesBox div:nth-child(${num+1})`);
-    removeDiv.style.display = "none";
+
+    let indexy = sessionStorage.getItem("indexy");
+
     let master = sessionStorage.getItem("master").split(',,,,,,,,');
-    master.splice(num, 1);
+    master.splice(indexy, 1);
     sessionStorage.setItem("master", master.join(",,,,,,,,"));
-    sessionStorage.setItem("newSpot", ""); // this prevents data stored in session from reappearing as a forage spot
-    return;
+    sessionStorage.setItem("newSpot", ""); // keep existing spots from being added back to the spots list
+    sessionStorage.setItem("indexy", ""); // clear out the selected spot for viewing
+    window.location.replace(`/index_mobile.html`);
 }
-*/
+
+document.getElementById("navi3").addEventListener("click", function(){
+    removeSpot();
+});

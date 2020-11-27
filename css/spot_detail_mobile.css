@@ -46,13 +46,18 @@ body {
 }
 
 .weather.container {
+  background-color: rgba(255, 255, 255, 0.5);
   grid-column: 2/8;
   grid-row: 7/10;
 }
 
 #weatherBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
+  font-weight: bold;
 }
 
 .hovstyle {

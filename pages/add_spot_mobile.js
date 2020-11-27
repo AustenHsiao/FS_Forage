@@ -85,6 +85,25 @@ function initMap(){
 let nextBtn = document.getElementById('next')
 
 nextBtn.onclick = function switchView(event) {
+    let nmInpt = document.getElementById('nameinput').value;
+    let spcInpt = document.getElementById('speciesinput').value;
+    let detInpt = document.getElementById('detailsinput').value;
+
+    if (nmInpt ==''){
+        alert('Please enter a name for this spot')
+        return false;
+    }
+
+    if (spcInpt ==''){
+        alert('Please enter which species you find at this spot')
+        return false;
+    }
+
+    if (detInpt ==''){
+        alert('Please enter a brief description of the spot')
+        return false;
+    }
+
     event.preventDefault();
     //HIDE THINGS
     document.getElementById('h1').style.visibility="hidden";
@@ -137,25 +156,6 @@ let submitBtn = document.getElementById('submit')
 
 submitBtn.onclick = function switchView(event) {
     //VALIDATE ENTRIES
-    let nmInpt = document.getElementById('nameinput');
-    let spcInpt = document.getElementById('speciesinput');
-    let detInpt = document.getElementById('detailsinput');
-
-    if (nmInpt.value.trim ==''){
-        alert('Please enter a name for this spot')
-        return false;
-    }
-
-    if (spcInpt.value.trim ==''){
-        alert('Please enter which species you find at this spot')
-        return false;
-    }
-
-    if (detInpt.value.trim ==''){
-        alert('Please enter a brief description of the spot')
-        return false;
-    }
-
     if(!(forageSpot>'')){
         alert('Please select a location to record by clicking on the map')
         return false;
