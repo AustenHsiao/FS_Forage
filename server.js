@@ -42,9 +42,9 @@ app.get('/add_spot_mobile.html',  (req, res) => {
   res.end();
 });
 
-app.get('/spot_detail_mobile/:id', function(req, res) {
-  var id = req.params.id; 
-  console.log(`requesting details page for item: ${id}`)
+app.get('/spot_detail_mobile.html:id', function(req, res) {
+  console.log(`dynamic url is being received as intended`)
+//  var id = req.params.id; 
   res.status(200);
   res.set({'Content-Type': 'text/html'})
   res.sendFile(path.join(__dirname + '/pages/spot_detail_mobile.html'));

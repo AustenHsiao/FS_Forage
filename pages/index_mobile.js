@@ -61,13 +61,11 @@ function addSpot(name, specie, detail, counter){
     div.style.margin = "0.1vw";
 
     div.id=`${counter}`
-    div.href=`/spot_detail_mobile_${div.id}.html`
+    div.href=`/spot_detail_mobile.html?id=${div.id}`
     div.style.zIndex="99";
     div.style.cursor="pointer"
 
     div.addEventListener("click", function(){
-        console.log(`this href=${this.href}`)
-        console.log(`this id=${this.id}`)
         window.location.replace(`${this.href}`)
     });
 
