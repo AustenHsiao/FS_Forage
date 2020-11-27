@@ -17,7 +17,6 @@ body,
   display: grid;
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 1fr);
-  /*  gap: 2px 2px;*/
 }
 
 #tborder {
@@ -46,10 +45,6 @@ body,
   border-style: solid;
   border-width: 2px;
   border-color: white;
-}
-
-.hlink {
-  color: white;
 }
 
 .hlink:hover {
@@ -81,7 +76,6 @@ body,
 #nav3 {
   grid-column: 14/20;
   grid-row: 2/3;
-/*  color: white; */
   font-size: x-large;
   font-weight: bold;
   text-align: center;

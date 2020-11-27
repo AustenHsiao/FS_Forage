@@ -18,48 +18,29 @@
     <script src="weather.js" defer></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-dark">
-      <div class="navbar-brand">Forage App</div>
-      <button class="navbar-toggle" type="button" data-toggle="collapse"
-      data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav">
-          <a class="navbar-text nav-link" href='/index_mobile.html'><li class="nav-item">Map</li></a>
-          <a class="navbar-text nav-link" href='/add_spot_mobile.html'><li class="nav-item">Add Spot</li></a>
-          <a class="navbar-text nav-link" href='#'><li class="nav-item">About</li></a>
-        </ul>
-      </div>
-    </nav>
 
-    <div class="welcome" id="welcomeOverlay">
-      <div class="container welcome-text">
-        <h3 id="desc-title">Welcome to Forage App</h3>
-        <p id="desc">
-          Forage app allows users to easily set and store foraging locations.
-          Start by clicking on the 'Add Spot' tab, then filling in the details on
-          the corresponding page. Your information will be displayed on the main
-          page. Use real-time weather data to plan your foraging trip
-        </p>
-        <button id="escape" onclick="clearOverlay()">Continue</button>
+    <div class ="grid-container">
+      <div class="welcome" id="welcomeOverlay">
+        <div class="container welcome-text">
+          <h3 id="desc-title">Welcome to Forage App</h3>
+          <p id="desc">
+            Forage app allows users to easily set and store foraging locations.
+            Start by clicking on the 'Add Spot' tab, then filling in the details on
+            the corresponding page. Your information will be displayed on the main
+            page. Use real-time weather data to plan your foraging trip
+          </p>
+          <button id="escape" onclick="clearOverlay()">Continue</button>
+        </div>
       </div>
-    </div>
 
-    <div class="container whole">
+      <h1 id="coordTitle">Foraging Spots</h1>
       <div class="container coord">
-        <h3 id="coordTitle">Foraging Locations</h3>
         <div id="coordinatesBox"></div>
       </div>
-
-      <div class="container map">
-        <div id="mapBox" crossorigin="anonymous">map</div>
-      </div>
+      
+      <div class="hovstyle" name="navi1" id="navi1" onclick="location.href='/add_spot_mobile.html';" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Add Spot</div>
+      <div class="hovstyle" name="navi2" id="navi2" onclick="location.href='#';" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">About (todo)</div>    
     </div>
 
-    <div class="container weather">
-      <div id="weatherBox">Weather</div>
-    </div>
   </body>
 </html>

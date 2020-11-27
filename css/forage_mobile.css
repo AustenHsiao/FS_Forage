@@ -6,110 +6,6 @@ body {
   background-repeat: no-repeat, repeat;
 }
 
-.navbar .navbar-brand {
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-}
-
-@media (max-width: 575px) {
-  .navbar-toggler-icon {
-    background-image: url("https://mdbootstrap.com/img/svg/hamburger4.svg?color=ffffff");
-  }
-
-  .navbar-toggle {
-    background-color: transparent;
-  }
-}
-
-@media (min-width: 576px) {
-  .navbar-toggle {
-    display: none;
-  }
-}
-
-.nav-item {
-  margin: 1em;
-}
-
-.navbar-text,
-.nav-link {
-  color: lightgray;
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-}
-
-.navbar a:hover {
-  text-decoration: none;
-  color: black;
-  background-color: white;
-}
-
-.coord.container {
-  max-width: 32.5vw;
-  min-width: 32.5vw;
-  background-color: rgba(255, 255, 255, 0.8);
-  min-height: 39vw;
-  max-height: 39vw;
-  display: inline-block;
-  margin: 0;
-  padding: 1vw;
-  color: Black;
-  font-size: 2vw;
-  overflow-y: scroll;
-  word-wrap: break-word;
-}
-
-.map.container {
-  max-width: 62.5vw;
-  min-width: 62.5vw;
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1vw;
-  min-height: 39vw;
-  max-height: 39vw;
-  margin: 0;
-  padding: 1vw;
-  color: Black;
-  font-size: 2vw;
-  font-weight: bold;
-}
-
-.weather.container {
-  min-width: 95vw;
-  max-width: 95vw;
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1vw;
-  min-height: 10vw;
-  display: block;
-  padding: 1vw;
-  color: Black;
-  font-size: 2vw;
-  font-weight: bold;
-}
-
-.whole.container {
-  display: flex;
-  min-width: 100%;
-  margin-top: 1vw;
-  justify-content: center;
-  margin-bottom: 1vw;
-}
-
-#mapBox {
-  height: 100%;
-}
-
-#coordinatesBox {
-  overflow: auto;
-  font-size: 1vw;
-}
-
-#coordTitle {
-  font-size: 1.5vw;
-  font-weight: bold;
-}
-
 .welcome {
   display: none;
   z-index: 3;
@@ -126,4 +22,72 @@ body {
   background-color: beige;
   margin-left: 50%;
   margin-right: 50%;
+}
+
+.grid-container {
+  margin: 1fr;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(13, 1fr);
+  gap: 2px 2px;
+  width: 480px;
+  height: 853px;
+}
+
+#coordTitle {
+  grid-column: 2/8;
+  grid-row: 2;
+  color: white;
+  text-align: center;
+  font-size: 250%;
+  font-weight: bolder;
+}
+
+.coord.container {
+  padding: 5px;
+  grid-column: 2/8;
+  grid-row: 3/11;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  color: Black;
+  overflow-y: scroll;
+  word-wrap: break-word;
+}
+
+#coordinatesBox {
+  grid-column: 2/8;
+  grid-row: 3/11;
+  overflow: auto;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.hovstyle {
+  color: white;
+}
+
+.hovstyle:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+  border:2px solid black
+}
+
+#navi1 {
+  grid-column: 2/8;
+  grid-row: 11;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  border:2px solid white;
+  cursor: pointer;
+}
+
+#navi2 {
+  grid-column: 2/8;
+  grid-row: 12;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  border:2px solid white;
+  cursor: pointer;
 }
