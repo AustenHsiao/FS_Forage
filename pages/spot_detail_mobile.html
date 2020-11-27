@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
     <title>Secret Spot</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">    
-    <link rel="stylesheet" href="/forage.css" />
+    <link rel="stylesheet" href="/spot_detail_mobile.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
@@ -14,52 +14,26 @@
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1polXZ_aJhq0AMs9o27vqrNtva1pCLQ"></script>
-    <script src="index.js" defer></script>
-    <script src="weather.js" defer></script>
+    <script src="spot_detail_mobile.js" defer></script>
+    <script src="weather.js" defer></script>   
   </head>
   <body>
-    <nav class="navbar navbar-expand-sm bg-dark">
-      <div class="navbar-brand">Forage App</div>
-      <button class="navbar-toggle" type="button" data-toggle="collapse"
-      data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav">
-          <a class="navbar-text nav-link" href='/'><li class="nav-item">Map</li></a>
-          <a class="navbar-text nav-link" href='/add_spot.html'><li class="nav-item">Add Spot</li></a>
-          <a class="navbar-text nav-link" href='#'><li class="nav-item">About</li></a>
-        </ul>
-      </div>
-    </nav>
+    <div class ="grid-container">
+      <div name="spotname" id="spotname">Default</div>
 
-    <div class="welcome" id="welcomeOverlay">
-      <div class="container welcome-text">
-        <h3 id="desc-title">Welcome to Forage App</h3>
-        <p id="desc">
-          Forage app allows users to easily set and store foraging locations.
-          Start by clicking on the 'Add Spot' tab, then filling in the details on
-          the corresponding page. Your information will be displayed on the main
-          page. Use real-time weather data to plan your foraging trip
-        </p>
-        <button id="escape" onclick="clearOverlay()">Continue</button>
-      </div>
-    </div>
-
-    <div class="container whole">
-      <div class="container coord">
-        <h3 id="coordTitle">Foraging Locations</h3>
-        <div id="coordinatesBox"></div>
+      <div class="container whole">
+        <div class="container map">
+          <div id="mapBox" crossorigin="anonymous">map</div>
+        </div>
       </div>
 
-      <div class="container map">
-        <div id="mapBox" crossorigin="anonymous">map</div>
-      </div>
-    </div>
+      <div class="container weather">
+        <div id="weatherBox">Weather</div>
+      </div> 
 
-    <div class="container weather">
-      <div id="weatherBox">Weather</div>
+      <div class="hovstyle" name="navi1" id="navi1" onclick="location.href='/index_mobile.html';" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Back</div>
+      <div class="hovstyle" name="navi2" id="navi2" onclick="location.href='#';" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">About (todo)</div>    
+      <div class="hovstyle" name="navi3" id="navi3" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Delete Spot</div>    
     </div>
   </body>
 </html>

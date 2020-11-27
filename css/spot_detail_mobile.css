@@ -1,0 +1,96 @@
+body {
+  background-image: url("https://images.pexels.com/photos/3672955/pexels-photo-3672955.jpeg?cs=srgb&dl=pexels-carboxaldehyde-3672955.jpg&fm=jpg"),
+    url("https://i.imgur.com/vRXGky8.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat, repeat;
+}
+
+.grid-container {
+  margin: 1fr;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(13, 1fr);
+  gap: 2px 2px;
+  width: 480px;
+  height: 853px;
+}
+
+#spotname {
+  grid-column: 2/8;
+  grid-row: 2;
+  color: white;
+  text-align: center;
+  font-size: 250%;
+  font-weight: bolder;
+}
+
+.whole.container {
+  grid-column: 2/8;
+  grid-row: 3/7;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  color: Black;
+  overflow-y: scroll;
+  word-wrap: break-word;
+}
+
+.map.container {
+  height: 100%;
+  width: 100%;
+}
+
+#mapBox {
+  height: 100%;
+  width: 100%;
+}
+
+.weather.container {
+  grid-column: 2/8;
+  grid-row: 7/10;
+}
+
+#weatherBox{
+  height: 100%;
+  width: 100%;
+}
+
+.hovstyle {
+  color: white;
+}
+
+.hovstyle:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  text-decoration: underline;
+  border:2px solid black
+}
+
+#navi1 {
+  grid-column: 2/8;
+  grid-row: 10;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  border:2px solid white;
+  cursor: pointer;
+}
+
+#navi2 {
+  grid-column: 2/8;
+  grid-row: 11;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  border:2px solid white;
+  cursor: pointer;
+}
+
+#navi3 {
+  grid-column: 2/8;
+  grid-row: 12;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  border:2px solid white;
+  cursor: pointer;
+}

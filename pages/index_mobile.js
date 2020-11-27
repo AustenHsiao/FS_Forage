@@ -1,3 +1,5 @@
+//const session = require("express-session");
+
 document.addEventListener("DOMContentLoaded", () => {
     if(!(/forage=true/.test(document.cookie))){
         document.getElementById("welcomeOverlay").style.display = "block";
@@ -43,12 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-function somefn(divid){
-    console.log(divid)
-    console.log(`this href=${this.href}`)
-    console.log(`this id=${this.id}`)
-}
-
 function addSpot(name, specie, detail, counter){
     let div = document.createElement("div");
     div.style.display = "block";
@@ -66,6 +62,13 @@ function addSpot(name, specie, detail, counter){
     div.style.cursor="pointer"
 
     div.addEventListener("click", function(){
+        
+        sessionStorage.setItem("indexy", div.id);
+
+        console.log(`div.id: ${div.id}`)
+
+        console.log(`indexy session: ${sessionStorage.getItem("indexy")}`)
+
         window.location.replace(`${this.href}`)
     });
 

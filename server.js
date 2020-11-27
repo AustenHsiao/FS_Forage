@@ -1,7 +1,8 @@
 const express = require('express');
-//const session = require('express-session');
 var bodyParser = require('body-parser');
 var app = express();
+
+//app.set('view engine', 'ejs');
 
 //create application/x-www-form-urlendcoded parser
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -43,12 +44,13 @@ app.get('/add_spot_mobile.html',  (req, res) => {
 });
 
 app.get('/spot_detail_mobile.html:id', function(req, res) {
-  console.log(`dynamic url is being received as intended`)
 //  var id = req.params.id; 
+
   res.status(200);
   res.set({'Content-Type': 'text/html'})
-  res.sendFile(path.join(__dirname + '/pages/spot_detail_mobile.html'));
+  res.sendFile(path.join(__dirname + '/pages/spot_detail_mobile.html'));  
   res.end();
+  console.log("we get to the end of the server.js logic at least")
  });
 
 app.listen(port, () => {
