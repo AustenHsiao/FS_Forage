@@ -68,7 +68,7 @@ function makeCurrentWeather(weather_data) {
     );
   } else {
     titleText = document.createTextNode(
-      "Current weather at: " +
+      "Current Weather at: " +
         weather_data.coord.lat +
         ", " +
         weather_data.coord.lon
@@ -101,6 +101,7 @@ function makeWeatherIcon(icon_string) {
   let imageElement = new Image(100, 100);
   imageElement.src = weatherURL;
   imageElement.className = "weatherImage";
+  imageElement.setAttribute("alt", "icon describing the current weather");
   return imageElement;
 }
 

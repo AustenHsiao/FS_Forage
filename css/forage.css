@@ -91,7 +91,7 @@ body {
 .weatherCurrent {
   width: 40vw;
   display: grid;
-  grid-template-columns: 105px auto;
+  grid-template-columns: auto auto;
   grid-template-rows: auto auto auto auto auto;
 }
 
@@ -101,6 +101,9 @@ body {
   grid-column: 1;
   background-color: rgb(175, 175, 175);
   border-radius: 20px;
+  max-width: 100%;
+  width: auto;
+  height: 100%;
 }
 
 .weatherTitle {
