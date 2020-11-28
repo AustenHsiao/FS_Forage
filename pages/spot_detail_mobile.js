@@ -29,10 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
         parsedDataPt = JSON.parse(dataPt);
 
         if(counter == indexy){
-            initMap(parsedDataPt.location);
-            addMarker(parsedDataPt.location);
-            document.getElementById("spotname").textContent = parsedDataPt.title;
-            return;
+          initMap(parsedDataPt.location);
+          addMarker(parsedDataPt.location);
+          document.getElementById("spotname").textContent = parsedDataPt.title;
+          ++counter;
+          return;
         }
         ++counter;
     });    
