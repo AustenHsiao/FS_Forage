@@ -52,8 +52,7 @@ Style for the weatherCurrent container, which holds
   background-color: rgb(175, 175, 175);
   border-radius: 2vw;
   max-width: 100%;
-  width: auto;
-  height: 100%;
+  height: auto;
 }
 
 /* positioning for the weather icon within the curentWeather grid */
@@ -66,7 +65,6 @@ Style for the weatherCurrent container, which holds
 .weatherTitle {
   grid-row: 1;
   grid-column: span 2;
-  font-size: 2vw;
 }
 
 .weatherLine {
