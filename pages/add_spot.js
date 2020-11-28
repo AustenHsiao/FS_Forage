@@ -7,7 +7,7 @@ function placeMarker(map, location) {
         forageSpot = new google.maps.Marker({
             position: location, 
             map: map,
-            draggable: true
+            draggable: true,
         });
     }
     localStorage.setItem(
@@ -27,6 +27,7 @@ function initMap(){
 
     google.maps.event.addListener(map, 'click', function(spot) {
         placeMarker(map, spot.latLng);
+        map.setCenter(spot.latLng);
     });
 };
 
