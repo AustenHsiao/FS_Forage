@@ -7,6 +7,7 @@
     <title>Secret Spot</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">    
     <link rel="stylesheet" href="/spot_detail_mobile.css" />
+    <link rel="stylesheet" href="/weather.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1polXZ_aJhq0AMs9o27vqrNtva1pCLQ"></script>
     <script src="spot_detail_mobile.js" defer></script>
-    <script src="weather_mobile.js" defer></script>   
+    <script src="weather.js" defer></script>   
   </head>
   <body>
     <div class ="grid-container">
@@ -27,9 +28,7 @@
         </div>
       </div>
 
-      <div class="container weather">
-        <div id="weatherBox">Weather</div>
-      </div> 
+        <div id="weatherBox" class="weatherBox mobile">Weather</div>
 
       <div class="hovstyle" name="navi1" id="navi1" onclick="location.href='/index_mobile.html';" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Back</div>
       <div class="hovstyle" name="navi2" id="navi2" onclick="location.href='#';" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">About (todo)</div>    
