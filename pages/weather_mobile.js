@@ -55,8 +55,8 @@ function makeCurrentWeather(weather_data) {
   currentWeaDiv.className = "weatherCurrent";
 
   //create the image element that will hold the current weather's icon
-//  let weatherIcon = makeWeatherIcon(weather_data.weather[0].icon);
-//  currentWeaDiv.appendChild(weatherIcon); //append icon to current weather
+  let weatherIcon = makeWeatherIcon(weather_data.weather[0].icon);
+  currentWeaDiv.appendChild(weatherIcon); //append icon to current weather
 
   //Create the title
   let title = document.createElement("span");
@@ -77,7 +77,7 @@ function makeCurrentWeather(weather_data) {
   title.appendChild(titleText);
 
   currentWeaDiv.appendChild(title);
-  
+
   //Fill in the rest of the relevant info
   let relevant = {
     Temperature: weather_data.main.temp + "F",
@@ -94,6 +94,16 @@ function makeCurrentWeather(weather_data) {
   }
 
   return currentWeaDiv;
+}
+
+function makeWeatherIcon(icon_string) {
+  let weatherURL =
+    "https://openweathermap.org/img/wn/" + icon_string + "@2x.png";
+  let imageElement = new Image(100, 100);
+  imageElement.src = weatherURL;
+  imageElement.className = "weatherImage";
+  imageElement.setAttribute("alt", "icon describing the current weather");
+  return imageElement;
 }
 
 function makeWeatherLine(title, value) {
