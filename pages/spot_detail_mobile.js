@@ -55,4 +55,5 @@ function removeSpot(){
 
 document.getElementById("navi3").addEventListener("click", function(){
     removeSpot();
+    window.location.replace(`/index_mobile.html`)
 });
