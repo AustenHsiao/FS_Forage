@@ -10,8 +10,13 @@ function placeMarker(map, location) {
             draggable: true
         });
     }
-    sessionStorage.setItem("newLocation", `${forageSpot.position.lat()}, ${forageSpot.position.lng()}`);
-    document.getElementById("spotlocation").innerHTML = sessionStorage.getItem('newLocation');
+    localStorage.setItem(
+      "newLocation",
+      `${forageSpot.position.lat()}, ${forageSpot.position.lng()}`
+    );
+    document.getElementById("spotlocation").innerHTML = localStorage.getItem(
+      "newLocation"
+    );
 }
 
 function initMap(){
@@ -54,10 +59,10 @@ submitBtn.onclick = function switchView(event) {
     }
 
     let data = {
-        title: nmInpt.value,
-        specie: spcInpt.value,
-        detail: detInpt.value,
-        location: sessionStorage.getItem("newLocation")
+      title: nmInpt.value,
+      specie: spcInpt.value,
+      detail: detInpt.value,
+      location: localStorage.getItem("newLocation"),
     };
-    sessionStorage.setItem("newSpot", JSON.stringify(data));
+    localStorage.setItem("newSpot", JSON.stringify(data));
 }

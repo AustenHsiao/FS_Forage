@@ -22,10 +22,10 @@ function addMarker(latlngString){
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    let indexy = sessionStorage.getItem("indexy");
+    let indexy = localStorage.getItem("indexy");
 
     let counter = 0;
-    (sessionStorage.getItem("master").split(',,,,,,,,')).forEach(dataPt => {
+    (localStorage.getItem("master").split(',,,,,,,,')).forEach(dataPt => {
         parsedDataPt = JSON.parse(dataPt);
 
         if(counter == indexy){
@@ -43,13 +43,13 @@ function removeSpot(){
         return;
     }
 
-    let indexy = sessionStorage.getItem("indexy");
+    let indexy = localStorage.getItem("indexy");
 
-    let master = sessionStorage.getItem("master").split(',,,,,,,,');
+    let master = localStorage.getItem("master").split(',,,,,,,,');
     master.splice(indexy, 1);
-    sessionStorage.setItem("master", master.join(",,,,,,,,"));
-    sessionStorage.setItem("newSpot", ""); // keep existing spots from being added back to the spots list
-    sessionStorage.setItem("indexy", ""); // clear out the selected spot for viewing
+    localStorage.setItem("master", master.join(",,,,,,,,"));
+    localStorage.setItem("newSpot", ""); // keep existing spots from being added back to the spots list
+    localStorage.setItem("indexy", ""); // clear out the selected spot for viewing
 }
 
 document.getElementById("navi3").addEventListener("click", function(){

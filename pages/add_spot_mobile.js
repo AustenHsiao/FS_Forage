@@ -4,17 +4,20 @@ var pos;
 let locations = [];
 
 function placeMarker(map, location) {
-    if(forageSpot>''){
-        forageSpot.setPosition(location);
-    }else{
-        forageSpot = new google.maps.Marker({
-            position: location, 
-            map: map,
-            draggable: true
-        });
-    }
-    sessionStorage.setItem("newLocation", `${forageSpot.position.lat()}, ${forageSpot.position.lng()}`);
-//    document.getElementById("spotlocation").innerHTML = sessionStorage.getItem('newLocation');
+  if (forageSpot > "") {
+    forageSpot.setPosition(location);
+  } else {
+    forageSpot = new google.maps.Marker({
+      position: location,
+      map: map,
+      draggable: true,
+    });
+  }
+  localStorage.setItem(
+    "newLocation",
+    `${forageSpot.position.lat()}, ${forageSpot.position.lng()}`
+  );
+  //    document.getElementById("spotlocation").innerHTML = localStorage.getItem('newLocation');
 }
 
 function center_current() {
@@ -171,10 +174,10 @@ submitBtn.onclick = function switchView(event) {
     }
 
     let data = {
-        title: nmInpt,
-        specie: spcInpt,
-        detail: detInpt,
-        location: sessionStorage.getItem("newLocation")
+      title: nmInpt,
+      specie: spcInpt,
+      detail: detInpt,
+      location: localStorage.getItem("newLocation"),
     };
-    sessionStorage.setItem("newSpot", JSON.stringify(data));
+    localStorage.setItem("newSpot", JSON.stringify(data));
 }

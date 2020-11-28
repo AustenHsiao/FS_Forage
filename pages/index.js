@@ -29,25 +29,25 @@ const clearOverlay = () => {
 document.addEventListener("DOMContentLoaded", () => {
     initMap();
 
-    let rawMaster = sessionStorage.getItem("master");
-    let rawData = sessionStorage.getItem("newSpot");
+    let rawMaster = localStorage.getItem("master");
+    let rawData = localStorage.getItem("newSpot");
 
     if(!rawMaster && !rawData){
         return;
     }
 
     if(!rawMaster && rawData){
-        sessionStorage.setItem("master", rawData);
+        localStorage.setItem("master", rawData);
     }else if(rawMaster && rawData){
         if(!(rawMaster.includes(rawData))){
             rawMaster += ",,,,,,,,"; // I'm using this as a delimiter
             rawMaster += rawData;
-            sessionStorage.setItem("master", rawMaster);
+            localStorage.setItem("master", rawMaster);
         }
     }
 
     let counter = 0;
-    (sessionStorage.getItem("master").split(',,,,,,,,')).forEach(dataPt => {
+    (localStorage.getItem("master").split(',,,,,,,,')).forEach(dataPt => {
         parsedDataPt = JSON.parse(dataPt);
         addSpot(counter, parsedDataPt.title, parsedDataPt.specie, parsedDataPt.detail, parsedDataPt.location);
         addMarker(parsedDataPt.location);
@@ -119,10 +119,10 @@ function removeSpot(num){
     markersList[num].setMap(null);
     var removeDiv = document.querySelector(`#coordinatesBox div:nth-child(${num+1})`);
     removeDiv.style.display = "none";
-    let master = sessionStorage.getItem("master").split(',,,,,,,,');
+    let master = localStorage.getItem("master").split(',,,,,,,,');
     master.splice(num, 1);
-    sessionStorage.setItem("master", master.join(",,,,,,,,"));
-    sessionStorage.setItem("newSpot", ""); // this prevents data stored in session from reappearing as a forage spot
+    localStorage.setItem("master", master.join(",,,,,,,,"));
+    localStorage.setItem("newSpot", ""); // this prevents data stored in session from reappearing as a forage spot
     return;
 }
 

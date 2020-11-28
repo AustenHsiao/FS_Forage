@@ -14,8 +14,8 @@ const clearOverlay = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    let rawMaster = sessionStorage.getItem("master");
-    let rawData = sessionStorage.getItem("newSpot");
+    let rawMaster = localStorage.getItem("master");
+    let rawData = localStorage.getItem("newSpot");
 
     if(!rawMaster && !rawData){
         let div = document.createElement("div");
@@ -26,21 +26,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if(!rawMaster && rawData){
-        sessionStorage.setItem("master", rawData);
+        localStorage.setItem("master", rawData);
     }else if(rawMaster && rawData){
         if(!(rawMaster.includes(rawData))){
             rawMaster += ",,,,,,,,"; // I'm using this as a delimiter
             rawMaster += rawData;
-            sessionStorage.setItem("master", rawMaster);
+            localStorage.setItem("master", rawMaster);
         }
     }
 
     var counter = 0;
-    (sessionStorage.getItem("master").split(',,,,,,,,')).forEach(dataPt => {
+    localStorage
+      .getItem("master")
+      .split(",,,,,,,,")
+      .forEach((dataPt) => {
         parsedDataPt = JSON.parse(dataPt);
-        addSpot(parsedDataPt.title, parsedDataPt.specie, parsedDataPt.detail, counter);
+        addSpot(
+          parsedDataPt.title,
+          parsedDataPt.specie,
+          parsedDataPt.detail,
+          counter
+        );
         ++counter;
-    });
+      });
 });
 
 function addSpot(name, specie, detail, counter){
@@ -61,7 +69,7 @@ function addSpot(name, specie, detail, counter){
     div.style.cursor="pointer"
 
     div.addEventListener("click", function(){
-        sessionStorage.setItem("indexy", div.id);
+        localStorage.setItem("indexy", div.id);
         window.location.replace(`${this.href}`)
     });
 
