@@ -50,7 +50,6 @@ function removeSpot(){
     sessionStorage.setItem("master", master.join(",,,,,,,,"));
     sessionStorage.setItem("newSpot", ""); // keep existing spots from being added back to the spots list
     sessionStorage.setItem("indexy", ""); // clear out the selected spot for viewing
-    window.location.replace(`/index_mobile.html`);
 }
 
 document.getElementById("navi3").addEventListener("click", function(){

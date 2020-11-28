@@ -1,4 +1,18 @@
+function mobilecheck(x) {
+    if (x.matches) { // If media query matches
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 document.addEventListener("DOMContentLoaded", () => {
+    var x = window.matchMedia("(max-width: 768px)")
+    
+    if(mobilecheck(x)){
+        window.location.replace(`/index_mobile.html`);
+    }
+    
     if(!(/forage=true/.test(document.cookie))){
         document.getElementById("welcomeOverlay").style.display = "block";
         document.cookie = 'forage=true; sameSite=none secure';
