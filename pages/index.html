@@ -8,26 +8,14 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>Secret Spot</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous"/>
     <link rel="stylesheet" href="/forage.css" />
     <link rel="stylesheet" href="/weather.css" />
     <!--included for proper weather functionality-->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      crossorigin="anonymous"
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"
     ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -36,32 +24,26 @@
     <script src="weather.js" defer></script>
   </head>
   <body>
+    <!--
     <nav class="navbar navbar-expand-sm bg-dark">
       <div class="navbar-brand">Forage App</div>
-      <button
-        class="navbar-toggle"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav">
-          <a class="navbar-text nav-link" href="/"
-            ><li class="nav-item">Map</li></a
-          >
-          <a class="navbar-text nav-link" href="/add_spot.html"
-            ><li class="nav-item">Add Spot</li></a
-          >
-          <a class="navbar-text nav-link" href="#"
-            ><li class="nav-item">About</li></a
-          >
+          <a class="navbar-text nav-link" href="/"><li class="nav-item">Map</li></a>
+          <a class="navbar-text nav-link" href="/add_spot.html"><li class="nav-item">Add Spot</li></a>
+          <a class="navbar-text nav-link" href="#"><li class="nav-item">About</li></a>
         </ul>
       </div>
+    </nav>-->
+    
+    <nav class="container navBar">
+        <h3>ForageApp</h3>
+        <a href="/" name="nav1" id="nav1" >Main</a>
+        <a href="/add_spot.html" name="nav2" id ="nav2">Add Spot</a>
+        <a href="#" name="nav3" id="nav3">About (todo)</a>
     </nav>
 
     <div class="welcome" id="welcomeOverlay">
