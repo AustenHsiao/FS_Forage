@@ -23,6 +23,7 @@ it should include this file
   height: 100%;
   font-weight: bold;
   align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .weatherBox.mobile{
