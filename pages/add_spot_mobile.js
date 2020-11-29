@@ -20,6 +20,36 @@ function placeMarker(map, location) {
   //    document.getElementById("spotlocation").innerHTML = localStorage.getItem('newLocation');
 }
 
+function zipcheck() {
+    geocoder = new google.maps.Geocoder();
+
+    let zippy = document.getElementById('zipinput').value
+
+    if (zippy.length =5) {
+        geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode( { 'address': zippy, 'region': 'US'}, function(results, status) {
+        
+            if (status == google.maps.GeocoderStatus.OK) {
+                let map = new google.maps.Map(document.getElementById("mapBox"), {
+                    zoom: 13,
+                    center: results[0].geometry.location
+                });
+            
+                google.maps.event.addListener(map, 'click', function(spot) {
+                    placeMarker(map, spot.latLng);
+                });
+
+            } else {
+                alert("Zip centering failed. Please check the zip code and try again");
+            }
+        });
+    }else if (zippy.length > 5){
+        alert("Interface only accepts 5 digit zip codes")
+        zippy.truncate(5)
+    }
+}
+
 function center_current() {
 
     if (navigator.geolocation) {
@@ -36,6 +66,7 @@ function center_current() {
     }
 }
 
+/*
 function recenter_map() {
     geocoder = new google.maps.Geocoder();
 
@@ -72,6 +103,7 @@ function recenter_map() {
     }
 
 }
+*/
 
 function initMap(){
     center_current();
@@ -153,10 +185,39 @@ nextBtn.onclick = function switchView(event) {
         google.maps.event.addListener(map, 'click', function(spot) {
             placeMarker(map, spot.latLng);
         });
-
-        document.getElementById("zipinput").addEventListener("focusout", recenter_map)
+//        document.getElementById("zipinput").addEventListener("focusout", recenter_map)
+//        center_current();
     }
+
+    document.getElementById("zipinput").addEventListener("keyup", event => {
+        let zippy = document.getElementById('zipinput').value
+    
+        if (zippy.length == 5) {
+            geocoder = new google.maps.Geocoder();
+    
+            geocoder.geocode( { 'address': zippy, 'region': 'US'}, function(results, status) {
+            
+                if (status == google.maps.GeocoderStatus.OK) {
+                    let map = new google.maps.Map(document.getElementById("mapBox"), {
+                        zoom: 13,
+                        center: results[0].geometry.location
+                    });
+                
+                    google.maps.event.addListener(map, 'click', function(spot) {
+                        placeMarker(map, spot.latLng);
+                    });
+    
+                } else {
+                    alert("Zip centering failed. Please check the zip code and try again");
+                }
+            });
+        }else if (zippy.length > 5){
+            alert("Interface only accepts 5 digit zip codes")
+            zippy.truncate(5)
+        }
+    });
 }
+
 
 let submitBtn = document.getElementById('submit')
 
