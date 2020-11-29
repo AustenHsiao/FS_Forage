@@ -6,6 +6,7 @@ body {
   background-repeat: no-repeat, repeat;
 }
 
+/*
 .welcome {
   display: none;
   z-index: 3;
@@ -23,6 +24,7 @@ body {
   margin-left: 50%;
   margin-right: 50%;
 }
+*/
 
 .grid-container {
   margin: 1fr;
