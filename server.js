@@ -10,6 +10,7 @@ const port = process.env.PORT || 5000;
 
 app.use('/', express.static(__dirname + '/pages'));
 app.use('/', express.static(__dirname + '/css'));
+app.use("/favicon.ico", express.static(__dirname + "/favicon.ico"));
   
 app.get('/', (req, res) => {
   res.status(200);
