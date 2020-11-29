@@ -54,7 +54,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   overflow-y: scroll;
   word-wrap: break-word;
 }
-
+/*
 #coordinatesBox {
   grid-column: 2/8;
   grid-row: 3/11;
@@ -62,7 +62,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   font-size: 15px;
   font-weight: bold;
 }
-
+*/
 .hovstyle {
   color: white;
 }
