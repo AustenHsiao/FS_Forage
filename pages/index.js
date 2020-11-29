@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     if(mobilecheck(x)){
         window.location.replace(`/index_mobile.html`);
+        return
     }
     
     if(!(/forage=true/.test(document.cookie))){
