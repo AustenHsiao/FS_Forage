@@ -82,6 +82,7 @@ function initMap(){
 
     google.maps.event.addListener(map, 'click', function(spot) {
         placeMarker(map, spot.latLng);
+        map.setCenter(spot.latLng);
     });
 };
 
