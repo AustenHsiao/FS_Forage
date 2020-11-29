@@ -49,6 +49,13 @@ app.get('/spot_detail_mobile.html', function(req, res) {
   res.end();
  });
 
+ app.get('/about_mobile.html', function(req, res) {
+  res.status(200);
+  res.set({'Content-Type': 'text/html'})
+  res.sendFile(path.join(__dirname + '/pages/about_mobile.html'));  
+  res.end();
+ });
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
