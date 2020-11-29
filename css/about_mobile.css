@@ -20,7 +20,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-column: 3/19;
   grid-row: 2/3;
   text-align: center;
-  font-size: 400%;
+  font-size: 300%;
   font-weight: 600;
   color: white;
 }
@@ -34,7 +34,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
 #appdetails {
   grid-column: 3/19;
   grid-row: 4/9;
-  font-size: medium;
+  font-size: small;
   font-weight: bold;
   max-width: 100%;
   border:2px solid black;
@@ -53,7 +53,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-column: 7/19;
   grid-row: 10/13;
   text-align: center;
-  font-size: medium;
+  font-size: small;
   font-weight: bold;
   max-width: 100%;
   border:2px solid black
@@ -70,7 +70,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-column: 7/19;
   grid-row: 13/16;
   text-align: center;
-  font-size: medium;
+  font-size: small;
   font-weight: bold;
   max-width: 100%;
   border:2px solid black
@@ -89,7 +89,7 @@ html, body, .grid-container { height: 100%; margin: 0; }
   grid-column: 7/19;
   grid-row: 16/19;
   text-align: center;
-  font-size: medium;
+  font-size: small;
   font-weight: bold;
   max-width: 100%;
   border:2px solid black
