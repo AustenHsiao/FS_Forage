@@ -65,7 +65,6 @@ async function populateWeatherMobile(lat, long) {
   } else {
     let currentWeatherDiv = makeCurrentWeather(currentWeather);
     weatherBox.appendChild(currentWeatherDiv);
-
   }
   return;
 }
@@ -96,15 +95,15 @@ async function populateWeather(lat, long) {
     weatherBox.appendChild(currentWeatherDiv);
 
     if (dailyWeather) {
-        let dailyWeatherDiv;;
-        let dailyWeatherContainer = document.createElement("div");
-        dailyWeatherContainer.className = "weatherDailyContainer";;
-        for (let day = 0; day < dailyWeather.daily.length; ++day)  {
-          dailyWeatherDiv = makeWeatherDay(dailyWeather.daily[day]);
-          dailyWeatherContainer.appendChild(dailyWeatherDiv);
-        }
-        weatherBox.appendChild(dailyWeatherContainer);
+      let dailyWeatherDiv;
+      let dailyWeatherContainer = document.createElement("div");
+      dailyWeatherContainer.className = "weatherDailyContainer";
+      for (let day = 0; day < dailyWeather.daily.length; ++day) {
+        dailyWeatherDiv = makeWeatherDay(dailyWeather.daily[day]);
+        dailyWeatherContainer.appendChild(dailyWeatherDiv);
       }
+      weatherBox.appendChild(dailyWeatherContainer);
+    }
   }
   return;
 }
@@ -155,8 +154,7 @@ function makeCurrentWeather(weather_data) {
 }
 
 function makeWeatherIcon(icon_string) {
-  let weatherURL =
-    "https://openweathermap.org/img/wn/" + icon_string + ".png";
+  let weatherURL = "https://openweathermap.org/img/wn/" + icon_string + ".png";
   let imageElement = new Image(50, 50);
   imageElement.src = weatherURL;
   imageElement.className = "weatherImage";
@@ -167,9 +165,9 @@ function makeWeatherIcon(icon_string) {
 function makeWeatherLine(title, value) {
   let row = document.createElement("div");
   if (!(title === "")) {
-      let titleCell = document.createElement("span");
-      titleCell.appendChild(document.createTextNode(title + ": "));
-      row.appendChild(titleCell);
+    let titleCell = document.createElement("span");
+    titleCell.appendChild(document.createTextNode(title + ": "));
+    row.appendChild(titleCell);
   }
 
   let valueCell = document.createElement("span");
