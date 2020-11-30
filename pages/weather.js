@@ -141,7 +141,6 @@ function makeCurrentWeather(weather_data) {
   let relevant = {
     Temperature: weather_data.main.temp + "F",
     Humidity: weather_data.main.humidity + "%",
-    Pressure: weather_data.main.pressure + " hPa",
     Conditions: weather_data.weather[0].description,
   };
 

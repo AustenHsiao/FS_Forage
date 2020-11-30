@@ -9,11 +9,11 @@ it should include this file
   max-width: 95vw;
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1vw;
-  min-height: 10vw;
+  height: 10vw;
   display: flex;
   padding: 1vw;
   color: Black;
-  font-size: 1.5vw;
+  font-size: 1 vw;
   font-weight: bold;
 }
 
@@ -43,6 +43,7 @@ Style for the weatherCurrent container, which holds
 - Figures about the current weather
 */
 .weatherCurrent {
+  height: 100%;
   flex-grow: 1;
   max-width: auto;
   display: grid;
