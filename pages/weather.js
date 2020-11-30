@@ -42,6 +42,34 @@ const getDailyWeather = async (lat, lon) => {
   return data;
 };
 
+async function populateWeatherMobile(lat, long) {
+  let currentWeather = await getCurrentWeather(lat, long); //fetch weather data from the API
+  let weatherBox = document.getElementById("weatherBox");
+  let weatherBoxContent;
+
+  //Delete old content of the weatherbox if it exists
+  if (weatherBox.hasChildNodes()) {
+    while (weatherBox.firstChild) {
+      weatherBox.removeChild(weatherBox.firstChild);
+    }
+  }
+
+  if (!currentWeather) {
+    //getWeather returned null, 404 error on API
+    weatherBoxContent = document.createElement("p");
+    let error_message = document.createTextNode(
+      "Unable to retrieve weather for this location."
+    );
+    weatherBoxContent.appendChild(error_message);
+    weatherBox.appendChild(weatherBoxContent);
+  } else {
+    let currentWeatherDiv = makeCurrentWeather(currentWeather);
+    weatherBox.appendChild(currentWeatherDiv);
+
+  }
+  return;
+}
+
 async function populateWeather(lat, long) {
   let currentWeather = await getCurrentWeather(lat, long); //fetch weather data from the API
   let dailyWeather = await getDailyWeather(lat, long);
@@ -66,15 +94,17 @@ async function populateWeather(lat, long) {
   } else {
     let currentWeatherDiv = makeCurrentWeather(currentWeather);
     weatherBox.appendChild(currentWeatherDiv);
-    
-    let dailyWeatherDiv
-    let dailyWeatherContainer = document.createElement("div");
-    dailyWeatherContainer.className = "weatherDailyContainer"
-    for (let day = 0; day < dailyWeather.daily.length; ++day){
-      dailyWeatherDiv = makeWeatherDay(dailyWeather.daily[day]);
-      dailyWeatherContainer.appendChild(dailyWeatherDiv);
-    }
-    weatherBox.appendChild(dailyWeatherContainer);
+
+    if (dailyWeather) {
+        let dailyWeatherDiv;;
+        let dailyWeatherContainer = document.createElement("div");
+        dailyWeatherContainer.className = "weatherDailyContainer";;
+        for (let day = 0; day < dailyWeather.daily.length; ++day)  {
+          dailyWeatherDiv = makeWeatherDay(dailyWeather.daily[day]);
+          dailyWeatherContainer.appendChild(dailyWeatherDiv);
+        }
+        weatherBox.appendChild(dailyWeatherContainer);
+      }
   }
   return;
 }

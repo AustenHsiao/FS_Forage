@@ -43,7 +43,6 @@ Style for the weatherCurrent container, which holds
 - Figures about the current weather
 */
 .weatherCurrent {
-  min-width: 200px;
   flex-grow: 1;
   max-width: auto;
   display: grid;
@@ -73,7 +72,6 @@ Style for the weatherCurrent container, which holds
 }
 
 .weatherDaily {
-  min-width: 100px;
   flex-grow: 0;
   display: grid;
   grid-template-columns: auto;

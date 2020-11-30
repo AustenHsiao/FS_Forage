@@ -17,7 +17,7 @@ function addMarker(latlngString){
         map,
         position: {lat: parsedLat, lng: parsedLng},
     });
-    populateWeather(parsedLat, parsedLng);
+    populateWeatherMobile(parsedLat, parsedLng);
 };
 
 
