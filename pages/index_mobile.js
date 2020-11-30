@@ -63,7 +63,6 @@ function addSpot(name, specie, detail, counter){
     div.style.margin = "0.1vw";
 
     div.id=`${counter}`
-//    div.href=`/spot_detail_mobile.html?id=${div.id}`
     div.href=`/spot_detail_mobile.html`
     div.style.zIndex="99";
     div.style.cursor="pointer"

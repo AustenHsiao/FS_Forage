@@ -6,47 +6,6 @@ body {
   background-repeat: no-repeat, repeat;
 }
 
-/*
-.navbar .navbar-brand {
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-}
-
-@media (max-width: 575px) {
-  .navbar-toggler-icon {
-    background-image: url("https://mdbootstrap.com/img/svg/hamburger4.svg?color=ffffff");
-  }
-
-  .navbar-toggle {
-    background-color: transparent;
-  }
-}
-
-@media (min-width: 576px) {
-  .navbar-toggle {
-    display: none;
-  }
-}
-
-.nav-item {
-  margin: 1em;
-}
-
-.navbar-text,
-.nav-link {
-  color: lightgray;
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-}
-
-.navbar a:hover {
-  text-decoration: none;
-  color: black;
-  background-color: white;
-}*/
-
 .container.navBar {
   border: solid;
   border-color: white;
