@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="authors" content="Austen Hsiao, Sandy Wood, Travis McGowan">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />   
-        <title>Foraging App</title>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" crossorigin="anonymous">
-      <link rel="stylesheet" href="/add_spot_full.css" />
-      <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> 
-      <script async="false" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1polXZ_aJhq0AMs9o27vqrNtva1pCLQ&callback=initMap"></script>
-    </head>
-    <body>
-        <form action="/" class="grid-container">
-          <div  name="tborder" id = "tborder"></div>
-          <div  name="lborder" id = "lborder"></div>
-          <div  name="rborder" id = "rborder"></div>
-          <div  name="bborder" id = "bborder"></div>
-          <div class="navbar" name="navbar" id="navbar"></div>
-          <a class = "nav1 hlink" href="/" name="nav1" id="nav1" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">Main</a>
-          <a class = "nav2 hlink" href="/add_spot.html" name="nav2" id ="nav2">Add Spot</a>
-          <a class = "nav3 hlink" href="/about" name="nav3" id="nav3" onmouseover="this.style.color='black'" onmouseout="this.style.color='white'">About</a>
-          <div class="title" name="title" id="title">NEW SPOT ENTRY FORM</div>
-          <div class="detail" name="detail" id="detail"></div>
-          <label for="nameinput" name="namelabel" id="namelabel">Spot Name:</label>
-          <input type="text" name = "nameinput" id="nameinput" required/>
-          <label for="speciesinput" name="specieslabel" id="specieslabel">Species Found:</label>
-          <input type="text" name="speciesinput" id="speciesinput" required/>
-          <label for="spotdetails" name="detailslabel" id = "detailslabel">Spot Details:(ingress/parking/conditions)</label>
-          <textarea type="text" name ="detailsinput" id="detailsinput"></textarea>
-          <button type="submit" name ="submit" id="submit">Create New Spot</button> 
-          <div class="container map" name="mapdiv" id="mapdiv"></div>
-          <div name="mapdiscl" id="mapdiscl">Select new spot location:
-            <div id="spotlocation" name="spotlocation"></div>
-          </div>
-          <div id="mapBox" crossorigin="anonymous">map</div>
-          
-        </form>
-        <script src="add_spot.js"></script>
-    </body>`
-    
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="authors" content="Austen Hsiao, Sandy Wood, Travis McGowan">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foraging App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/add_spot_full.css" />
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <script async="false"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1polXZ_aJhq0AMs9o27vqrNtva1pCLQ&callback=initMap"></script>
+</head>
+
+<body>
+  <form action="/" class="grid-container">
+    <div name="tborder" id="tborder"></div>
+    <div name="lborder" id="lborder"></div>
+    <div name="rborder" id="rborder"></div>
+    <div name="bborder" id="bborder"></div>
+    <div class="navbar" name="navbar" id="navbar"></div>
+    <a class="nav1 hlink" href="/" name="nav1" id="nav1" onmouseover="this.style.color='black'"
+      onmouseout="this.style.color='white'">Main</a>
+    <a class="nav2 hlink" href="/add_spot.html" name="nav2" id="nav2">Add Spot</a>
+    <a class="nav3 hlink" href="/about.html" name="nav3" id="nav3" onmouseover="this.style.color='black'"
+      onmouseout="this.style.color='white'">About</a>
+    <div class="title" name="title" id="title">NEW SPOT ENTRY FORM</div>
+    <div class="detail" name="detail" id="detail"></div>
+    <label for="nameinput" name="namelabel" id="namelabel">Spot Name:</label>
+    <input type="text" name="nameinput" id="nameinput" required />
+    <label for="speciesinput" name="specieslabel" id="specieslabel">Species Found:</label>
+    <input type="text" name="speciesinput" id="speciesinput" required />
+    <label for="spotdetails" name="detailslabel" id="detailslabel">Spot Details:(ingress/parking/conditions)</label>
+    <textarea type="text" name="detailsinput" id="detailsinput"></textarea>
+    <button type="submit" name="submit" id="submit">Create New Spot</button>
+    <div class="container map" name="mapdiv" id="mapdiv"></div>
+    <div name="mapdiscl" id="mapdiscl">Select new spot location:
+      <div id="spotlocation" name="spotlocation"></div>
+    </div>
+    <div id="mapBox" crossorigin="anonymous">map</div>
+
+  </form>
+  <script src="add_spot.js"></script>
+</body>`
+
 </html>
